@@ -49,6 +49,15 @@ const Layout = (props) => {
             {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
           </button>
         </div>
+        <div className="flex gap-6 items-center">
+          <a
+            href="https://github.com/levraiardox/"
+            className="text-md border-neutral-300 bg-white hover:bg-neutral-50 dark:bg-background-2 dark:hover:bg-surface-2 transition  px-4 py-2 border-[1px] dark:border-contrast rounded-md flex items-center gap-2"
+          >
+            <LucideGithub size={20} />
+            <p>Github</p>
+          </a>
+        </div>
       </div>
       <div className="md:w-1/2 px-2 w-full grow markdown-content xl:w-2/5">
         {props.children}
