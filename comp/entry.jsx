@@ -10,10 +10,10 @@ const Entry = ({ text, link, level }) => {
     t = "Amateur";
     color = "difficulty-amateur";
   } else if (level == "3") {
-    t = "Intermediate";
+    t = "Intermédiaire";
     color = "difficulty-intermediate";
   } else if (level == "4") {
-    t = "Advance";
+    t = "Avancé";
     color = "difficulty-advance";
   } else if (level == "5") {
     t = "Expert";
