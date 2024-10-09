@@ -1,0 +1,89 @@
+---
+type: page
+title: Les bases sur les OS
+tag: windows
+author: Ardox
+---
+import Diagram from "../../comp/diagram.jsx"
+
+## Les bases des OS
+Un OS est un **ensemble de programmes** qui permettent de gérer les ressources d'un ordinateur. Ils servent d'interface entre l'utilisateur et le matériel.
+<br />
+Ces logiciel sont:
+- **Le noyau (kernel)**: contient des programmes basiques du système.
+- **Le systeme de fichers**: permet de gérer les données sur le disque dur.
+- **L'interface (shell)**: permet de communiquer avec le système
+- **Les applications**: programmes qui tournent sur l'OS
+<br />
+L'OS se trouve sur le **disque dur**, et est chargé en mémoire lors du démarrage de l'ordinateur.
+<br />
+**Un système d'exploitation a plusieurs fonctions:**
+- Interface entre la machine et l'utilisateur
+- Gestion des ressources (CPU, mémoire, disque dur, etc)
+- Gestion des fichiers et des répertoires
+- Reseaux
+- Sécurité
+- Gestion des erreurs
+
+<div className="seperator" />
+
+## Comment installer un OS sur un pc sans OS ?
+
+**methode de base**
+1. Insérer le support d'installation: ça peut etre un CD, un DVD, une clé USB, etc
+3. Démarrer le pc: Sans OS, le pc va booter sur le media d'installation
+4. Suivre les instructions
+<br />
+**methode avancée (PXE)**
+
+Le Pre-boot eXecution Environment (PXE) est une methode de boot sur le réseau. Elle permet a un ordinateur, depuis le reseau, de récuperer un systeme d'exploitation qui se trouve sur un serveur.
+<br />
+1. Configurer le BIOS pour booter sur le réseau
+2. Le pc va chercher un serveur DHCP
+3. Le serveur va lui donner une adresse IP et un fichier de boot
+4. Le pc va booter sur le fichier de boot et installer l'OS
+C'est une methode pratique pour s'occuper de plusieurs pc en même temps.
+<br />
+<div className="seperator" />
+## Les drivers
+Un driver est un programme qui permet a un peripherique ou un composant de communiquer avec l'OS.
+<br />
+Certains peripheriques sont reconnus par l'OS, mais pour d'autres, il faut installer le driver manuellement.
+<br />
+Les drivers sont fournis par le constructeur du peripherique. Il est important de les mettre a jour pour eviter les bugs et les failles de sécurité.
+<br />
+Certains OS ont un systeme de mise a jour automatique des drivers.
+<br />
+<div className="seperator" />
+## La différence entre PC et serveur
+Un serveur est un ordinateur qui fournit des services a d'autres ordinateurs. Il est plus puissant et plus fiable qu'un PC.
+<br />
+<div className="seperator" />
+*Tips: toujours verouiller son pc quand on s'éloigne*
+<div className="seperator" />
+## Les versions et éditions de Windows
+Il existe plusieurs versions de Windows, qui sont adaptées a différents usages.
+<br />
+**Les Versions**
+- **Windows 11**: la version la plus récente
+- **Windows 10**: la version anterieuere
+- **Windows 8**: la version avant
+- **Windows 7**: la version encore avant
+
+*(les versions anterieures ne sont plus trop utilisées)*
+<br />
+Toutes ces versions sont basées sur le Kernel NT, qui est un noyau hybride. Il est basé sur le noyau de Windows 2000, mais avec des améliorations. Ils utilisent aussi le systeme de fichiers NTFS.
+Les versions plus anciennes de Windows sont basées sur le noyau MS-DOS (Windows 95, 98, etc). Ils utilisent le systeme de fichiers FAT32.
+<br />
+Ainsi, les deux grandes familles de Windows sont les NT et les 9x. Les 9x sont pourris, les NT sont *plus ou moins* bien.
+<br />
+**Les Editions**
+- **Home**: pour les particuliers, souvent préinstallé sur les pc grand public.
+- **Pro**: pour les professionnels, avec plus de fonctionnalités (Azure active directory, BitLocker, Hyper-V...).
+- **Education**: pour les écoles, avec des fonctionnalités pour les élèves et les enseignants.
+- **Pro Education**: pour les écoles mais en mieux (Azure AD, BitLocker, etc).
+- **Entreprise**: pour les entreprises, avec des fonctionnalités de sécurité et de gestion.
+- *any* **N**: version avec narrateur.
+
+<br />
+<div className="seperator" />
