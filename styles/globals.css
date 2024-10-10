@@ -119,6 +119,19 @@
     @apply w-full pt-[1px] px-2 bg-neutral-200  dark:bg-contrast my-4;
 }
 
+.markdown-content .red {
+    @apply bg-red;
+}
+.markdown-content .green {
+    @apply bg-green;
+}
+.markdown-content .blue {
+    @apply bg-blue;
+}
+.markdown-content .orange {
+    @apply bg-orange;
+}
+
 * {
     font-family: "Geist";
 }

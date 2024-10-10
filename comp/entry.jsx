@@ -21,9 +21,6 @@ const Entry = ({ text, link, level }) => {
   }
   return (
     <div className="flex w-full justify-between group items-center relative entry">
-      <div className="marker w-32">
-        <div className={`py-2 progress progress-${level}`}></div>
-      </div>
       <a href={link}>{text}</a>
       <span className={`difficulty ${color}`}>{t}</span>
     </div>
