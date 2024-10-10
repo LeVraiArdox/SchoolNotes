@@ -18,7 +18,7 @@ const Entry = ({ text, link, format }) => {
   }
   return (
     <div className="flex w-full justify-between group items-center relative entry">
-      <a href={link} download>{text}</a>
+      <a href={link} target="_blank" rel="noopener noreferrer" download>{text}</a>
       <span className={`difficulty ${color}`}>{t}</span>
     </div>
   );
