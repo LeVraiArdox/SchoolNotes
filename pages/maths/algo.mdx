@@ -1,0 +1,129 @@
+---
+type: page
+title: Algorithmes
+tag: Maths
+author: Ardox
+---
+import Diagram from "../../comp/diagram.jsx"
+
+# Algorithmes
+Un Algorithme est une suite finie et non ambiguë d'instructions permettant de résoudre un problème ou d'obtenir un résultat:
+```
+Declaration:
+    A=valeur
+    B=valeur
+    C=valeur
+debut
+    Ecrire('Entrez la valeur de A')
+    Lire(A)
+    Ecrire('Entrez la valeur de B')
+    Lire(B)
+    Si B n'est pas = a 0 alors
+        C=A/B
+        Ecrire('La division de A par B est: ', C)
+    Sinon
+        Ecrire('La division par 0 est impossible')
+    FinSi
+fin
+```
+Ceci est ce qu'on appelle un pseudo-code. En python, cela donnera:
+```python
+A = int(input('Entrez la valeur de A')) # Int permet de convertir la valeur en entier.
+B = int(input('Entrez la valeur de B'))
+if B != 0:
+    C = A/B
+    print('La division de A par B est: ', C)
+else:
+    print('La division par 0 est impossible')
+```
+On peut egalement ecrire des algorithmes sous forme d'algorigrammes.
+<Diagram src="/maths/algo.png" />
+<br />
+<div className="separator" />
+## Les types d'opérateurs
+Il existe plusieurs types d'opérateurs en algorithmique:
+- **Les opérateurs arithmétiques**:
+    - Addition: `+`
+    - Soustraction: `-`
+    - Multiplication: `*`
+    - Division: `/`
+    - Modulo: `%`
+    - Division entière: `//`
+- **Les opérateurs de comparaison**:
+    - Egalité: `==`
+    - Différence: `!=`
+    - Supérieur: `>`
+    - Inférieur: `<`
+    - Supérieur ou égal: `>=`
+    - Inférieur ou égal: `<=`
+- **Les opérateurs logiques**:
+    - Et: `and`
+    - Ou: `or`
+    - Non: `not`
+
+<div className="separator" />
+## Les conditions
+Il existe plusieurs types de conditions en algorithmique:
+- La boucle `for`:
+```
+pour i allant de 0 à 10 faire
+    Ecrire(i)
+fin
+```
+```python
+for i in range(10):
+    print(i)
+```
+- La boucle `while`:
+```
+i=0
+tant que i < 10 faire
+    Ecrire(i)
+    i=i+1
+fin
+```
+```python
+i = 0
+while i < 10:
+    print(i)
+    i += 1
+```
+- La condition `if`:
+```
+si a > b alors
+    Ecrire('a est plus grand que b')
+sinon si a < b alors
+    Ecrire('a est plus petit que b')
+sinon
+    Ecrire('a est égal à b')
+fin
+```
+```python
+if a > b:
+    print('a est plus grand que b')
+elif a < b:
+    print('a est plus petit que b')
+else:
+    print('a est égal à b')
+```
+- La condition `switch`:
+```
+switch a:
+    cas 1: Ecrire('a est égal à 1')
+    cas 2: Ecrire('a est égal à 2')
+    sinon:
+        Ecrire('a n'est ni égal à 1 ni à 2')
+fin
+```
+```python
+switch a:
+    case 1:
+        print('a est égal à 1')
+        break
+    case 2:
+        print('a est égal à 2')
+        break
+    default:
+        print('a n\'est ni égal à 1 ni à 2')
+```
+<div className="separator" />
