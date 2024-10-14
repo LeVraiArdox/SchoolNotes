@@ -37,7 +37,6 @@ else:
     print('La division par 0 est impossible')
 ```
 On peut egalement ecrire des algorithmes sous forme d'algorigrammes.
-<Diagram src="/maths/algo.png" />
 <br />
 <div className="separator" />
 ## Les types d'opérateurs
@@ -66,13 +65,28 @@ Il existe plusieurs types d'opérateurs en algorithmique:
 Il existe plusieurs types de conditions en algorithmique:
 - La boucle `for`:
 ```
-pour i allant de 0 à 10 faire
-    Ecrire(i)
-fin
+# Algorithme de Puissance
+Variables
+    N, p, R, i: Entiers
+Debut
+    Ecrire('Entrez la valeur de N')
+    Lire(N)
+    Ecrire('Entrez la valeur de p')
+    Lire(p)
+    R <- 1
+    Pour i <- 1 à p
+        R <- R * N
+    FinPour
+    Ecrire('La puissance de N^p est: ', R)
+Fin
 ```
 ```python
-for i in range(10):
-    print(i)
+N = int(input('Entrez la valeur de N'))
+p = int(input('Entrez la valeur de p'))
+R = 1
+for i in range(1, p+1):
+    R *= N
+print('La puissance de N^p est: ', R)
 ```
 - La boucle `while`:
 ```
@@ -126,4 +140,199 @@ switch a:
     default:
         print('a n\'est ni égal à 1 ni à 2')
 ```
+- la boucle `repeat`:
+```
+# Algorithme de division
+Variables
+    A, B, C: Entiers
+Debut
+    Ecrire('Entrez la valeur de A')
+    Lire(A)
+    Ecrire('Entrez la valeur de B')
+    Lire(B)
+    C <- 0
+    Repeter
+        A <- A - B
+        C <- C + 1
+    Jusqu'a A < B
+    Ecrire('Le quotient de A par B est: ', C)
+Fin
+```
+```python
+A = int(input('Entrez la valeur de A'))
+B = int(input('Entrez la valeur de B'))
+C = 0
+while A >= B:
+    A -= B
+    C += 1
+print('Le quotient de A par B est: ', C)
+```
+<br />
 <div className="separator" />
+<br />
+## Exercice:
+Ecrire un algorithme qui demande un nombre de départ, et qui le calcule par la somme des entiers jusqu'à ce nombre.
+```
+Variables
+    N, S, i: Entiers
+Debut
+    Ecrire('Entrez la valeur de N')
+    Lire(N)
+    S <- 0
+    Pour i <- 1 à N
+        S <- S + i
+    FinPour
+    Ecrire('La somme des entiers de 1 à N est: ', S)
+Fin
+```
+```python
+N = int(input('Entrez la valeur de N'))
+S = 0
+for i in range(1, N+1):
+    S += i # += revient à faire S = S + i
+print('La somme des entiers de 1 à N est: ', S)
+```
+<br />
+<div className="separator" />
+## Les tableaux
+Un tableau est une structure de données qui permet de stocker plusieurs valeurs dans une seule variable. 
+```
+# Algorithme etudiants
+Variables
+    Notes[5]: Tableau Entiers
+    i: Entier
+Debut
+    Pour i <- 1 à 5
+        Ecrire('Entrez la note de l\'étudiant ', i)
+        Lire(Notes[i])
+    FinPour
+Fin
+```
+En python, cela se fait de la manière suivante:
+```python
+tab = [1, 2, 3, 4, 5]
+x = tab[2] # x vaut 3, car les indices commencent à 0 (0, 1, 2, 3, 4)
+```
+ou
+```python
+Tableau Identifiant[nombre] : Type
+# Identifiant est le nom du tableau, on peut le changer
+# nombre est le nombre d'éléments dans le tableau
+# Type est le type des éléments du tableau (entier, réel, caractère, etc)
+```
+<br />
+<div className="separator" />
+## Les fonctions
+Une fonction est un sous programme qui retourne un resultat:
+```
+Fonction Nom(): Type
+Variables
+    var1, var2: Type
+Debut
+    Instructions
+    Retourne resultat
+Fin
+```
+En python, cela se fait de la manière suivante:
+```python
+def Nom():
+    var1 = 1
+    var2 = 2
+    return var1 + var2
+```
+
+Fonction qui permet de calculer la factorielle d'un nombre:
+```
+Fonction Factorielle(N: Entier): Entier
+Variables
+    i, F: Entiers
+Debut
+    F <- 1
+    Pour i <- 1 à N
+        F <- F * i
+    FinPour
+    Retourne F
+Fin
+```
+```
+# Utiliser la fonction Factorielle
+Variables
+    N: Entier
+Debut
+    Ecrire('Entrez un nombre')
+    Lire(N)
+    Ecrire('La factorielle de ', N, ' est: ', Factorielle(N))
+Fin
+```
+En python, cela se fait de la manière suivante:
+```python
+def Factorielle(N): # N est un entier
+    F = 1
+    for i in range(1, N+1):
+        F *= i
+    return F
+
+print(Factorielle(5)) # Affiche 120
+```
+<br />
+## Exercice:
+### 1. On definit la suite de fibonacci la suite de reels (Fn) définie par:
+$$
+F_0 = 0
+$$
+$$
+F_1 = 1
+$$
+$$
+F_n = F_{n-1} + F_{n-2}
+$$
+Ecrire un algorithme qui permet de calculer le n-ieme terme de la suite de fibonacci.
+```
+Fonction Fibonacci(N: Entier): Entier
+Variables
+    i, F, F1, F2: Entiers
+Debut
+    F1 <- 0
+    F2 <- 1
+    Pour i <- 2 à N
+        F <- F1 + F2
+        F1 <- F2
+        F2 <- F
+    FinPour
+    Retourne F
+Fin
+```
+```python
+def Fibonacci(N):
+    F1 = 0
+    F2 = 1
+    for i in range(2, N):
+        F = F1 + F2
+        F1 = F2
+        F2 = F
+    return F
+
+print(Fibonacci(5)) # Affiche 3
+```
+### 2. Ecrire un algorithme qui demande un nombre de départ, et qui calcule la somme des entiers jusqu'à ce nombre.
+```
+Fonction Somme(N: Entier): Entier
+Variables
+    i, S: Entiers
+Debut
+    S <- 0
+    Pour i <- 1 à N
+        S <- S + i
+    FinPour
+    Retourne S
+Fin
+```
+```python
+def Somme(N):
+    S = 0
+    for i in range(1, N+1):
+        S += i
+    return S
+
+print(Somme(5)) # Affiche 15
+```
