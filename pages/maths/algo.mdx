@@ -7,6 +7,7 @@ author: Ardox
 import Diagram from "../../comp/diagram.jsx"
 
 # Algorithmes
+## Ce cours est a lire pour perdre son âme.
 Un Algorithme est une suite finie et non ambiguë d'instructions permettant de résoudre un problème ou d'obtenir un résultat:
 ```
 Declaration:
@@ -38,7 +39,7 @@ else:
 ```
 On peut egalement ecrire des algorithmes sous forme d'algorigrammes.
 <br />
-<div className="separator" />
+<div className="seperator"></div>
 ## Les types d'opérateurs
 Il existe plusieurs types d'opérateurs en algorithmique:
 - **Les opérateurs arithmétiques**:
@@ -60,7 +61,7 @@ Il existe plusieurs types d'opérateurs en algorithmique:
     - Ou: `or`
     - Non: `not`
 
-<div className="separator" />
+<div className="seperator"></div>
 ## Les conditions
 Il existe plusieurs types de conditions en algorithmique:
 - La boucle `for`:
@@ -168,7 +169,7 @@ while A >= B:
 print('Le quotient de A par B est: ', C)
 ```
 <br />
-<div className="separator" />
+<div className="seperator"></div>
 <br />
 ## Exercice:
 Ecrire un algorithme qui demande un nombre de départ, et qui le calcule par la somme des entiers jusqu'à ce nombre.
@@ -193,7 +194,7 @@ for i in range(1, N+1):
 print('La somme des entiers de 1 à N est: ', S)
 ```
 <br />
-<div className="separator" />
+<div className="seperator"></div>
 ## Les tableaux
 Un tableau est une structure de données qui permet de stocker plusieurs valeurs dans une seule variable. 
 ```
@@ -221,7 +222,7 @@ Tableau Identifiant[nombre] : Type
 # Type est le type des éléments du tableau (entier, réel, caractère, etc)
 ```
 <br />
-<div className="separator" />
+<div className="seperator"></div>
 ## Les fonctions
 Une fonction est un sous programme qui retourne un resultat:
 ```
@@ -275,8 +276,10 @@ def Factorielle(N): # N est un entier
 print(Factorielle(5)) # Affiche 120
 ```
 <br />
+<div className="seperator"></div>
+
 ## Exercice:
-### 1. On definit la suite de fibonacci la suite de reels (Fn) définie par:
+On definit la suite de fibonacci la suite de reels (Fn) définie par:
 $$
 F_0 = 0
 $$
@@ -290,11 +293,11 @@ Ecrire un algorithme qui permet de calculer le n-ieme terme de la suite de fibon
 ```
 Fonction Fibonacci(N: Entier): Entier
 Variables
-    i, F, F1, F2: Entiers
+    i, F, F1, F2: Entiers 
 Debut
     F1 <- 0
     F2 <- 1
-    Pour i <- 2 à N
+    Pour i <- 2 à N 
         F <- F1 + F2
         F1 <- F2
         F2 <- F
@@ -314,25 +317,48 @@ def Fibonacci(N):
 
 print(Fibonacci(5)) # Affiche 3
 ```
-### 2. Ecrire un algorithme qui demande un nombre de départ, et qui calcule la somme des entiers jusqu'à ce nombre.
-```
-Fonction Somme(N: Entier): Entier
-Variables
-    i, S: Entiers
-Debut
-    S <- 0
-    Pour i <- 1 à N
-        S <- S + i
-    FinPour
-    Retourne S
-Fin
-```
-```python
-def Somme(N):
-    S = 0
-    for i in range(1, N+1):
-        S += i
-    return S
 
-print(Somme(5)) # Affiche 15
+<div className="seperator"></div>
+## Complexité algorithmique
+La complexité algorithmique est une mesure de la quantité de ressources nécessaires pour exécuter un algorithme. Elle est généralement exprimée en fonction de la taille de l'entrée de l'algorithme.
+Il existe plusieurs types de complexité algorithmique:
+- **Complexité temporelle**: mesure le temps d'exécution de l'algorithme en fonction de la taille de l'entrée.
+- **Complexité spatiale**: mesure l'espace mémoire nécessaire pour exécuter l'algorithme en fonction de la taille de l'entrée.
+
+Ces deux aspects sont des mesures clés de la performance d'un algorithme.
+<br />
+La complexité temporelle fait référence au temps nécessaire pour exécuter un algorithme en fonction de la taille de l'entrée, notée $n$. Elle est généralement exprimée en fonction de la notation "$O$" (notation de Landau). Par exemple, si un algorithme a une complexité temporelle de $O(n)$, cela signifie que le temps d'exécution de l'algorithme est proportionnel à la taille de l'entrée.
+<br />
+La noation Big-$O$ décrit le comportement asymptotique d'une fonction lorsque la variable tend vers l'infini. Par exemple, si une fonction $f(n)$ est $O(g(n))$, cela signifie que $f(n)$ est bornée par une constante fois $g(n)$ pour $n$ suffisamment grand.
+<br />
+Il existe plusieurs classes de complexité temporelle:
+- **$O(1)$**: complexité constante. Le temps d'exécution de l'algorithme est indépendant de la taille de l'entrée.
+- **$O(\log n)$**: complexité logarithmique. Le temps d'exécution de l'algorithme est proportionnel au logarithme de la taille de l'entrée.
+- **$O(n)$**: complexité linéaire. Le temps d'exécution de l'algorithme est proportionnel à la taille de l'entrée.
+- **$O(n \log n)$**: complexité linéarithmique. Le temps d'exécution de l'algorithme est proportionnel à la taille de l'entrée multipliée par le logarithme de la taille de l'entrée.
+- **$O(n^2)$**: complexité quadratique. Le temps d'exécution de l'algorithme est proportionnel au carré de la taille de l'entrée.
+- **$O(2^n)$**: complexité exponentielle. Le temps d'exécution de l'algorithme double à chaque augmentation de la taille de l'entrée.
+- **$O(n!)$**: complexité factorielle. Le temps d'exécution de l'algorithme est proportionnel au produit de tous les entiers de 1 à $n$.
+
+<br />
+exemples de complexité temporelle:
+
+**temps linéaire**:
+```python
+def linear_search(arr, x):
+    for i in range(len(arr)): # O(n)
+        if arr[i] == x: # si l'element est trouvé
+            return i
+    return -1
 ```
+**temps quadratique**:
+```python
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n): # O(n)
+        for j in range(0, n-i-1): # O(n)
+            if arr[j] > arr[j+1]: # si l'element est plus grand
+                arr[j], arr[j+1] = arr[j+1], arr[j] # on les echange
+```
+
+<div className="seperator"></div>
