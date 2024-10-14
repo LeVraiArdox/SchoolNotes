@@ -1,0 +1,75 @@
+---
+type: page
+title: LaTeX
+tag: Maths
+author: Ardox
+---
+import Diagram from "../../comp/diagram.jsx"
+
+# Cours perso: Comment Utiliser LaTeX
+**Ce cours est pour moi, juste pour savoir comment ecrire des formules mathematiques en LaTeX pour les prochains cours.**
+<br />
+## Les bases
+LaTeX est un langage de composition de texte, et plus particulièrement de mathématiques. Il est très utilisé dans le monde scientifique, et notamment en mathématiques. Il permet de rédiger des documents de qualité professionnelle, et est très apprécié pour la qualité typographique de ses formules mathématiques.
+<br />
+Les Formules:
+- Puissance : `a^b` donne $a^b$.
+- Indice : `a_b` donne $a_b$.
+- Racine carrée : `\sqrt{a}` donne $\sqrt{a}$.
+- Fraction : `\frac{a}{b}` donne $\frac{a}{b}$.
+- Somme : `\sum_{i=1}^n` donne $\sum_{i=1}^n$​.
+
+<br />
+On peut egalement reformater les equations. Par exemple avec l'energie cinétique:
+<br />
+En ecrivant `$E_c = \frac{1}{2} m v^2**$` (donc avec `$formule$`) on obtient $E_c = \frac{1}{2} m v^2$
+<br />
+Si on mets deux fois le dollar (donc `$formule$`), on obtient une formule centrée:
+$$
+E_c = \frac{1}{2} m v^2
+$$
+<br />
+La formule doit etre sur 3 lignes pour etre centrée:
+```
+$$
+E_c = \frac{1}{2} m v^2
+$$
+```
+<br />
+<div className="separator" />
+## Les matrices
+Les matrices sont tres utiles en mathematiques. On peut les ecrire de la maniere suivante:
+```
+\begin{matrix}
+a & b \\
+c & d
+\end{matrix}
+```
+Ce qui donne:
+$$
+\begin{matrix}
+a & b \\
+c & d
+\end{matrix}
+$$
+<br />
+<div className="separator" />
+## Les vecteurs
+Les vecteurs sont egalement tres utiles en mathematiques. On peut les ecrire de la maniere suivante:
+```
+\begin{pmatrix}
+a \\
+b \\
+c
+\end{pmatrix}
+```
+Ce qui donne:
+$$
+\begin{pmatrix}
+a \\
+b \\
+c
+\end{pmatrix}
+$$
+<br />
+<div className="separator" />
