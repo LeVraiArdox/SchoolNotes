@@ -171,32 +171,15 @@ identifiant : l’adresse MAC.
 Mais avant d'étudier cette dernière je vais introduire une notion importante qui reviendra régulièrement quand on parle
 de réseau
 <br />
-
-**Les modes de communication**
-- **Unicast** : il s’agit d’un mode de communication où il y a un expéditeur et un
-destinataire, dont le rôle peut permuter. Comme dans une discussion.
-- **Multicast : ou multi-diffusions** il s’agit d’un mode de communication ou un
-expéditeur communique avec plusieurs destinataires. Comme par exemple dans
-l’envoi d’un mail groupé
-- **Broadcast** : il s’agit d’un mode de communication ou expéditeur communique avec
-l’ensemble des membres d’un même réseau. Les destinataire peuvent ou non être
-concernés par cette communication. Tous les appareils pouvant recevoir cette
-émission font partie d'un domaine de diffusion. On peut comparer un broadcast avec
-une émission de radio, de télé ou encore un stream sur Twitch mais cependant le
-broadcast implique forcément que le destinataire soit connecté au réseau. Hors dans
-les exemples cités, les utilisateurs ne sont pas automatiquement connectés à ces
-réseaux.
-- **Anycast** : il s’agit d’un mode de communication ou un expéditeur envoie un message
-à un groupe de destinataires dont il est lui-même membre. Ici on se fiche de qui
-réceptionne le message tant que celui-ci est réceptionné par un membre du groupe.
-Cette méthode de communication est notamment utilisée pour le routage.
+**Modes de communication**
+- **Unicast** : Communication entre un expéditeur et un destinataire, similaire à une discussion.
+- **Multicast** : Un expéditeur communique avec plusieurs destinataires, comme un mail groupé.
+- **Broadcast** : Un expéditeur communique avec tous les membres d'un réseau, comparable à une émission de radio ou de télé, mais nécessite que les destinataires soient connectés au réseau.
+- **Anycast** : Un expéditeur envoie un message à un groupe de destinataires, sans se soucier de qui le reçoit, tant qu'un membre du groupe le réceptionne. Utilisé notamment pour le routage.
 <br />
 **Adresse MAC**
 <br />
-L'adresse Mac est un identifiant unique et propre à chaque carte réseau des équipements réseau (switch, routeur ...) ou
-machines (ordinateur, serveur ...), au niveau du modèle OSI elle se situe à la couche 2 ; elle est codée sur 48 bits sur 6
-octets : soit 48 bits et codé en hexadécimal (base16 : les chiffres de 0 à 9 plus les lettres de A à F majuscule ou
-minuscule, que nous détaillerons dans le point suivant).
+L'adresse MAC est un identifiant unique pour chaque carte réseau (switch, routeur, ordinateur, serveur, etc.). Elle se situe à la couche 2 du modèle OSI et est codée sur 48 bits (6 octets) en hexadécimal (base 16 : chiffres 0-9 et lettres A-F, majuscules ou minuscules).
 <br />
 Exemple d’adresse MAC **5E:FF:56:A2:AF:15**
 <br />
@@ -217,12 +200,10 @@ MAC possibles.
 Pour terminer avec l’adresse MAC, notez qu’il en existe une qui n’est pas affectable, il s’agit de l’adresse
 FF:FF:FF:FF:FF:FF, il s’agit de l’adresse de broadcast* de niveau deux.
 <br />
-*Broadcast : Un broadcast dans un réseau d’ordinateurs est un message transmis à tous les participants du réseau et ne
-nécessitant pas de réponse. L’un des ordinateurs du réseau envoie un paquet de données simultanément à tous les autres
-participants du réseau. L’émetteur n’a pas à indiquer ici les adresses des destinataires, ce qui distingue le mode d’envoi
-en broadcast du mode d’envoi en unicast. Dans l’envoi en unicast, l’expéditeur adresse la transmission à un seul
-destinataire connu. De manière générale, l’avantage du broadcast est qu’il permet de diffuser très largement les
-informations avec une seule et même transmission.
+**Broadcast** : Un broadcast dans un réseau d’ordinateurs est un message transmis à tous les participants 
+du réseau sans nécessiter de réponse. Un ordinateur envoie un paquet de données simultanément à tous les 
+autres participants. Contrairement à l’unicast, l’émetteur n’a pas besoin d’indiquer les adresses des destinataires. 
+L’avantage du broadcast est qu’il permet de diffuser largement les informations avec une seule transmission.
 <br />
 **Binaire et Hexadécimal**
 <br />
@@ -235,42 +216,27 @@ Il y en a d’autres bien évidement dont certaines que l’on utilise tous les 
 utilise tous les jours pour compter ou la base 60 pour le calcul du temps.
 <br />
 - Le binaire.
-
   Comment calculer en binaire ?
-  La seule différence entre le calcul binaire et décimal, réside dans le fait que la base 2 ne nous donne que deux caractères
-  pour représenter un digit. Donc la retenue qui intervient toutes les 10 caractères en décimal interviendra tous les 2
-  caractères en binaire.
-  Comme pour la base 10 où chaque nombre peut être exprimé en puissance. En binaire chaque bit peut être exprimé par
-  une puissance de 2 puisque nous sommes en base 2. Cela signifie que chaque digit sera deux fois plus grand que le
-  précédent.
+  En binaire, chaque chiffre (bit) est une puissance de 2, car nous sommes en base 2. La retenue intervient tous les 2 caractères, 
+  contrairement à la base 10 où elle intervient tous les 10 caractères. Chaque bit est donc deux fois plus grand que le précédent.
   <Diagram src='/reseaux/bintable.png' />
-  Comment faire conversion décimale vers binaire ?
-  Pour effectuer la conversion du décimal vers le binaire il faut fait appel à la fonction ET. Pour rappel la fonction ET est un
-  comparateur logique en algèbre qui permet de vérifier si deux valeurs respectent toutes les deux une condition, le
-  résultat de cette comparaison peut être VRAI ou FAUX. Si le résultat est VRAI (true en anglais) le bit sera à 1, si c’est
-  FAUX (false en anglais) le bit sera à 0.
-  Pour effectuer la conversion il faut vérifier si la valeur décimale est ≥ à la valeur de la puissance de 2. Si cette
-  comparaison est vraie, le bit correspondant est à 1, dans le cas contraire le bit est à 0.
+  Comment convertir un nombre décimal en binaire ?
+  Pour convertir un nombre décimal en binaire, on utilise la fonction ET logique. Cette fonction compare deux valeurs et retourne VRAI (1) si 
+  les deux conditions sont remplies, sinon FAUX (0). 
+  Pour la conversion, on vérifie si la valeur décimale est ≥ à la puissance de 2 correspondante. Si c'est vrai, le bit est 1, sinon il est 0.
   <Diagram src='/reseaux/bintodec.png' />
-  Dans notre cas 21 s’écrit en binaire : 10101. Nous ne sommes pas obligés dans une simple conversion d’écrire les
-  premiers bits à 0, ils représentent l’absence de valeur ils sont donc le cas présent inutiles.
-  On peut donc maintenant également expliquer les fameuses 256 valeurs possibles dans un octet que nous avons évoqué
-  en parlant de l’adresse mac . Si on multiplie le nombre de valeurs possibles par bit (2) par celle sdes autres bits on
-  obtient le calcul suivant : 2x2x2x2x2x2x2x2 = 256.
-  Maintenant que nous avons fait une première conversion binaire, je vais vous posez la question suivante pourquoi les
-  puissances de 2 sont rangées dans l’ordre décroissant dans un octet et pas dans l’ordre croissant ?
-  La réponse vient du fait que si l’on ne range pas les puissances de deux dans l’ordre croissant on ne pourra pas convertir
-  l’ensemble de nombre décimaux.
+  Par exemple, 21 en binaire s’écrit : 10101. Les premiers bits à 0 sont inutiles dans une simple conversion.
+  Pour expliquer les 256 valeurs possibles dans un octet, multiplions les valeurs possibles par bit (2) par celles des autres bits : 2^8 = 256.
+  Pourquoi les puissances de 2 sont-elles rangées dans l’ordre décroissant dans un octet et pas dans l’ordre croissant ?
+  Si les puissances de deux ne sont pas rangées dans l’ordre croissant, on ne pourra pas convertir l’ensemble des nombres décimaux.
+
 <br />
+
 - L'hexadécimal.
 
-  Il s’agit du système hexadécimal qui est tout aussi important en informatique que le binaire notamment dans le
-  développement, mais aussi en réseau avec notamment les adresses MAC.
-  En mathématique nous n’avons que 10 chiffres de 0 à 9, donc dix caractères possibles, et là nous devons coder avec 16
-  caractères.
-  Du coup la question qui se pose est : comment faire pour avoir 16 caractères?
-  Et bien c’est très simple en hexadécimal nous avons ajouté en plus des chiffres de 0 à 9 les lettres de A à F (en majuscule
-  ou minuscule), ce qui nous donne le tableau de valeur suivant :
+  L'hexadécimal est crucial en informatique, notamment pour les adresses MAC. En mathématiques, nous avons 10 chiffres (0-9), 
+  mais en hexadécimal, nous utilisons 16 caractères. Pour cela, nous ajoutons les lettres A à F (majuscule ou minuscule) aux 
+  chiffres 0 à 9, formant ainsi le tableau suivant :
   <Diagram src='/reseaux/hextable.png' />
   Maintenant que nous avons compris comment est conçue la base 16, nous allons effectuer des conversions à savoir :
     - Conversion décimale vers hexadécimal
@@ -352,7 +318,9 @@ utilise tous les jours pour compter ou la base 60 pour le calcul du temps.
     ```
 <br />
 <br />
-**Le protocole Ethernet**
+**Le protocole Ethernet**Le champ FCS (Frame Check Sequence) codé sur 4 octets qui permet de valider l'intégrité de la trame à 1 bit
+  près. Il utilise un CRC (Cyclic Redundancy Check) qui englobe tous les champs de la trame. Ainsi, la station
+  réceptrice peut décider si la trame est correcte et doit être transmise à la couche supérieure : LLC
 <br />
 Nous avons vu quels éléments étaient nécessaires aux machines pour communiquer ensemble. Mais nous n’avons pas vu
 comment celles-ci dialoguaient entre elles, ou plutôt comment et à l’aide de quoi ces dernières interprètent les bits
@@ -369,18 +337,19 @@ plusieurs formes que nous allons devoir décortiquer dans les prochaines pages.
 <br />
 **Ethernet II**
 <br />
-Les trames Ethernet modernes ont été utilisées pour la première fois dans la structure dite Ethernet II avant
-qu’Ethernet ne soit développé en 1983 par l’IEEE dans le protocole standard IEEE 802.3. Nous allons donc commencer
-par étudier cette structure avant de voir ces différentes variations.
+Les trames Ethernet modernes ont d'abord été utilisées dans la structure Ethernet II avant d'être standardisées en 
+1983 par l'IEEE sous le protocole IEEE 802.3. Étudions cette structure et ses variations.
 <br />
 Voici les différents champs qui composent le cœur de la trame; l’ensemble des champs est égal à 1518 octets :
-- On commence par les adresses MAC destinataires, suivies de la MAC de l’expéditeur codé sur 6 octets chacune
-  comme vu précédemment. Les chercheurs ont déterminé qu’il était plus intéressant d’avoir l’adresse du destinataire
-  en premier, en effet ce positionnement permet de savoir immédiatement si le message est pour nous* ou non. (Dans
-  le sens est que la trame est pour la machine qui reçoit la reçoit ou non)
+- Les adresses MAC destinataire et expéditeur, chacune codée sur 6 octets. Placer l'adresse du destinataire 
+  en premier permet de savoir immédiatement si le message nous est destiné.
 - Le champ longueur / type : qui indique le protocole utilisé en couche 3 pour transmettre la donnée, codé sur
   2 octets.
 - La donnée avec un minimum attendu de 46 octets et maximum de 1500.
 - Le champ FCS (Frame Check Sequence) codé sur 4 octets qui permet de valider l'intégrité de la trame à 1 bit
   près. Il utilise un CRC (Cyclic Redundancy Check) qui englobe tous les champs de la trame. Ainsi, la station
   réceptrice peut décider si la trame est correcte et doit être transmise à la couche supérieure : LLC
+<br />
+<br />
+<br />
+<p className="text-red">A partir d'ici, pendant les vacances, lire les pages du diapo 41 a 59</p>
