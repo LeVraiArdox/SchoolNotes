@@ -1,0 +1,17 @@
+---
+type: page
+title: Les hyperviseurs (VM)
+tag: windows
+author: Ardox
+---
+import Diagram from "../../comp/diagram.jsx"
+
+## Les hyperviseurs
+Un hyperviseur est un logiciel qui permet de créer et de gérer des machines virtuelles. 
+Il permet de faire tourner plusieurs systèmes d'exploitation sur un seul ordinateur.
+<br />
+Il existe deux types d'hyperviseurs:
+- **Type 1** *(bare-metal)*: Ils tournent directement sur le matériel. Ils sont plus performants, mais plus complexes a configurer (ex: ESXi, Hyper-V)
+- **Type 2**: Ils tournent sur un OS. Ils sont plus simples a configurer, mais moins performants (ex: VirtualBox, VMware Workstation)
+<br />
+<Diagram src="/windows/hypervisor-types.png" />
