@@ -90,7 +90,13 @@ Le partitionnement est le processus qui consiste à diviser un disque de stockag
 <br />
 Il existe deux principales méthodes de partitionnement : le MBR (Master Boot Record, utilisé avec le BIOS legacy) et le GPT (GUID Partition Table, utilisé avec l'UEFI).
 <br />
-<Diagram src="/hardware/mbrvsgpt.png" />
+|                                   | MBR                                                                                      | GPT                                                          |
+|-----------------------------------|------------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| **Capacité maximale de partition**     | 2 To                                                                                     | 9,4 Zio (1 Zio = 1 milliard de téraoctets)                   |
+| **Nombre maximal de partitions**       | 4 partitions principales (ou 3 principales + un nombre infini de partitions logiques)   | 128 partitions principales                                   |
+| **Support de l'interface firmware**    | BIOS                                                                                    | UEFI                                                         |
+| **Compatibilité avec les systèmes d'exploitation** | Windows 7 et systèmes plus anciens (Windows 95/98, Windows XP 32 bits, Windows 2000, Windows 2003 32 bits) | Systèmes récents comme Windows 11, Windows 10 64 bits, Windows 8/8.1 64 bits |
+
 
 
 <div className="seperator" />
@@ -117,7 +123,13 @@ Le RAID utilise plusieurs disques dur pour:
 - Combiner à la fois la redondance et la répartition, afin d’améliorer la performance ou de protéger contre les pannes de disque. 
 <br />
 Le système RAID peut être implémenté soit en matériel (via un contrôleur RAID dédié) soit en logiciel (via le système d’exploitation). Le choix dépend des besoins en termes de performances et de gestion. 
-<Diagram src="/hardware/raidlvl.png" />
+| Niveau de RAID | Tolérance aux pannes         | Performances                       | Espaces disponibles | Usage                                                         |
+|----------------|------------------------------|------------------------------------|----------------------|---------------------------------------------------------------|
+| 0              | Non                           | Très élevées                       | 100%                 | Performances prioritaires (montage vidéo, jeux)               |
+| 1              | Oui (1 disque)                | Bonne (lecture rapide)             | 50%                  | Systèmes critiques (bases de données, serveur)                |
+| 5              | Oui (1 disque)                | Lecture rapide, écriture plus lente| (N-1)/N              | Serveurs de fichier, équilibre entre performances et redondance |
+| 6              | Oui (2 disques)               | Lecture rapide, écriture plus lente| (N-2)/N              | Grands systèmes de stockage, forte tolérance aux pannes       |
+| 10             | Oui (1 disque par miroir)     | Très élevées                       | 50%                  | Systèmes à hautes performances et haute disponibilité (bases de données critiques) |
 <br />
 **redondance**: solution de backup. Il en existe plusieurs:
 - **Niveau 0 (striping)**: Deux disques distincts, vus en une seule unité logique (deux livres dans une seule étagère). ![raid0](https://www.prepressure.com/images/raid-level-0-striping.svg) Cette solution est bien pour sa vitesse, mais si un disque tombe, l'autre est inexploitable.

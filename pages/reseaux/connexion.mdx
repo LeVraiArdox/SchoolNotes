@@ -30,7 +30,16 @@ but principal de limiter la sensibilité aux interférences et la diaphonie dans
 Les câbles pairs torsadées peuvent être soit blindé ou non. Le schéma de la page suivante vous montre les différents
 types de câble.
 <br />
-<Diagram src="/reseaux/tableau_torsade.png" />
+| Usage courant       | ISO 11801 | Blindage du câble   | Blindage de paire | 
+|---------------------|-----------|----------------------|------------------|
+| UTP                 | U/UTP     | aucun               | aucun             |
+| STP                 | S/UTP     | tresse              | aucun             |
+| FTP, STP            | F/UTP     | feuillard           | aucun             |
+| SFTP, S-FTP, STP    | SF/UTP    | tresse, feuillard   | aucun             |
+| STP                 | U/FTP     | aucun               | feuillard         |
+| SSTP, SFTP, STP     | S/FTP     | tresse              | feuillard         |
+| FFTP, STP           | F/FTP     | feuillard           | feuillard         |
+| SSTP, SFTP, STP     | SF/FTP    | tresse, feuillard   | feuillard         |
 <br />
 Initialement il existait deux types de câbles Ethernet :
 - **Le cable droit**: Un câble droit est un type de câble à paire torsadée utilisé dans les
@@ -87,7 +96,25 @@ type 3 avec 55 W (avec une intensité maximale par paire de 600 mA) et type 4 av
 par paire de 960 mA) répartis sur les 4 paires du câble Ethernet. Compte-tenu des pertes dans le câble, la puissance
 réellement disponible sur l'équipement est de 71 W sur l'équipement alimenté en type 4
 <br />
-<Diagram src="/reseaux/poetab.png" />
+| Catégories| Débits       | Longueur Max | POE supporter | Type                  | Impédance | Fréquence Max |
+|-----------|--------------|--------------|---------------|-----------------------|-----------|---------------|
+| 3         | 10 Mbits/s   | 150 m        | Non           | UTP                   | 100-120 Ohm| 16 MHz        |
+| 4         | 16 Mbits/s   | 150 m        | Non           | UTP                   | 100 Ohm   | 20 MHz        |
+| 5         | 100 Mbit/s   | 150 m        | Non           | UTP                   | 100 Ohm   | 100 MHz       |
+| 5e        | 1 à 10 Gigabit/s*| 150 m       | Oui           | UTP, F/UTP, U/UTP     | 100 Ohm   | 100 MHz       |
+| 6         | 5 à 10 Gigabit/s*| 150 m       | Oui           | UTP, F/UTP, U/UTP     | 100 Ohm   | 250 MHz       |
+| 6a        | 10 Gbit/s    | 150 m        | Oui           | UTP, F/UTP, U/UTP, S/FTP| 100 Ohm   | 500 MHz       |
+| 7         | 20 à 40 Gbit/s| 150 m        | Oui           | S/FTP, F/FTP          | 100 Ohm   | 600 MHz       |
+| 7a        | 20 à 40 Gbit/s| 150 m        | Oui           | S/FTP, F/FTP          | 100 Ohm   | 1 GHz         |
+| 8.1       | 20 à 40 Gbit/s| 150 m        | Oui           | F/FTP, U/FTP          | 100 Ohm   | 2 GHz         |
+| 8.2       | 20 à 40 Gbit/s| 150 m        | Oui           | S/FTP, F/FTP          | 100 Ohm   | 2 GHz         |
+
+* Varie selon la longueur du câble.
+<br />
+| Avantages                                                                                  | Inconvénients                                                                                       |
+|--------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| Ajout ou retrait de matériel sur le switch ou le hub sans interruption de fonctionnement.  | Cela peut être plus ou moins sensible aux perturbations électriques selon la qualité des câbles.    |
+| Sécurité augmentée : un pirate doit passer par le port de services ouvert ou se connecter directement depuis l'intérieur du réseau. | Comme toute architecture réseau câblé, difficile à modifier car les câbles passent souvent dans les murs et plafonds. |
 <br />
 <br />
 ### 2. La Fibre Optique
@@ -136,7 +163,15 @@ importante que sur les fibres à saut d'indice.
 - - Portée maximale : environ 2 Km
 - - Affaiblissement : 10 dB/Km
 <br />
-<Diagram src="/reseaux/fibretable.png" />
+| Catégorie           | Débit               | Portée maximale | Nombre de faisseaux |
+|---------------------|---------------------|-----------------|---------------------|
+| Monomode (base SX)  | 100 Gbit/s          | 100 Km          |   1                 |
+| Multimode (base LX) | 100Mbit/s a 1Gbit/s | 2 Km            |   1                 |
+<br />
+| Avantages                                                           | Inconvénients                                                                                                                                |
+|---------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+|Insensible aux perturbations électriques, car le signal est lumineux.| C'est une technologie fragile qui nécessite des compétences particulieres pour son installation et son déploiement.                          |
+|                                                                     | Comme toute architecture réseau câblé, il ne sera pas facile de modifier, car très souvent les câbles passent dans les murs et les plafonds. |
 <br />
 Il existe également des cartes réseaux fibre optique pour les ordinateurs mais leur prix reste encore élevé, entre 150€ et
 600€.
@@ -148,7 +183,17 @@ modem Internet, etc.) au sein d'un réseau informatique afin de permettre la tra
 cours du temps, il y a eu plusieurs évolutions de la technologie Wi-Fi avec surtout une amélioration de ses capacités.
 <br />
 <Diagram src="/reseaux/wifi.png" />
-<Diagram src="/reseaux/wifitable.png" />
+<br />
+| Norme    | Nom commercal | Bande de fréquence | Débit théorique | Largeur de la bande      |Portée interieure | Portée exterieure | Date de sortie |
+|----------|---------------|--------------------|-----------------|--------------------------|------------------|-------------------|----------------|
+| 802.11ac | Wi-Fi 5       | 5GHz               | 3.5 Gbit/s      | 20, 40, 80, 160 Mhz      | 30 a 45 m        | 100 a 200 m       | 2013           | 
+| 802.11ax | Wi-Fi 6       | 2,4 et 5 GHz       | 9.6 Gbit/s      | 20, 40, 80, 160 Mhz      | 30 a 50 m        | 100 a 200 m       | 2019           |
+| 802.11ax | Wi-Fi 6E      | 6 GHz              | 9.6 Gbit/s      | 20, 40, 80, 160 Mhz      | 30 a 45 m        |  75 a 150 m       | 2020           |
+| 802.11be | Wi-Fi 7       | 2.4, 5 et 6 GHz    | 46 Gbit/s       | 20, 40, 80, 160, 320 Mhz | Non spécifié     |  Non spécifié     | 2024           |
+<br />
+| Avantages                                             | Inconvénients                          |
+|-------------------------------------------------------|----------------------------------------|
+| grande flexibilité pour l'ajout de nouveaux appareils | Sensibilité aux attaques               | 
 <br />
 <div className="seperator" />
 ## Le CPL (courant porteur en ligne)
@@ -164,6 +209,20 @@ CPL est rayonnée sous forme d'ondes radio. On classe traditionnellement les CPL
 débit offert.
 <br />
 <Diagram src="/reseaux/cpl.png" />
-<Diagram src="/reseaux/cpltable.png" />
+<br />
+| Catégorie | Débit         | Bande passante         | Distance conseillée | Distance maximale |
+|-----------|---------------|------------------------|---------------------|-------------------|
+|Haut débit |0.2 a 2 Gbit/s | 1.6 a 30 Mhz           | 200 m               | 1000 m            |
+|Bas débit  |0.2 a 2 Gbit/s | 9 a 150 Khz (europe)   | 200 m               | 1000 m            |
+<br />
+| Avantages                           | Inconvénients                                                                               |
+|-------------------------------------|---------------------------------------------------------------------------------------------|
+| Installation facile et peu couteuse |Sensible aux variations ou pannes electriques                                                |
+|                                     |Les installations triphasées ne permettent pas de faire passer le signal sur une autre phase |
+|                                     |Risque de piratage ou vol de données depuis l'exterieur                                      |
+|                                     |Les parafoudres, multiprises avec filtre et onduleurs peuvent bloquer les hautes frequences  |
+|                                     |Les CPL peuvent être perturbés par les ondes radio et les ondes wifi                         |
+|                                     |Risque d'incompatibilité de certains materiels ou protocols                                  |
+<br />
 <br />
 <div className="seperator" />
