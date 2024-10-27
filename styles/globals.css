@@ -139,6 +139,20 @@ body {
     background-color: #000;
 }
 
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid var(--shiki-color-text);
+    padding: 8px;
+}
+  th {
+    background-color: #3c3c3c;
+    color: var(--shiki-color-text);
+}
+
 :root {
     --shiki-color-text: #171717;
     --shiki-color-background: transparent;
