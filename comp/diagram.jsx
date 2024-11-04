@@ -1,7 +1,11 @@
 import React from "react";
 
-const Diagram = ({ src }) => {
-  return <img src={src} alt="Diagram" className="diagram" />;
+const Diagram = ({ src, invert = false }) => {
+  if (!invert) {
+    return <img src={src} alt="Diagram" className="diagram" />;
+  } else {
+    return <img src={src} alt="Diagram" className="diagram invert" />;
+  }
 };
 
 export default Diagram;
