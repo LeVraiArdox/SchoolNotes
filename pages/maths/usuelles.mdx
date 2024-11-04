@@ -8,160 +8,134 @@ import Diagram from "../../comp/diagram.jsx"
 
 ## Les fonctions affines et linéaires
 
-**Définition** : Pour tout $x$ dans $\mathbb{R}$, la fonction affine est définie par $f(x) = ax + b$ où $a$ et $b$ sont des réels donnés.
-<br />
-$a$ est appelé le coefficient directeur et $b$ est l'ordonnée à l'origine.
+**Définition** : Pour tout $x$ dans $\mathbb{R}$, une fonction affine est définie par \( f(x) = ax + b \), où \( a \) et \( b \) sont des réels donnés.  
+- \( a \) est appelé le coefficient directeur (ou pente) et indique la direction de la fonction.  
+- \( b \) est l'ordonnée à l'origine, le point où la droite croise l'axe des ordonnées.
 
-$b$ est l'ordonnée a l'origine.
-
-si $b = 0$, la fonction est dite linéaire..
+Si \( b = 0 \), la fonction est dite linéaire.
 
 ### Variations
-- Si $a > 0$, la fonction est croissante.
-- Si $a < 0$, la fonction est décroissante.
-- Si $a = 0$, la fonction est constante.
-<br />
-### Signe de $f(x)$
-Tableau a refaire
-| $x$ |-∞ 0  +∞ |
-|-----|---------|
-| $f(x)$ | +   - |
-<br />
+- **Croissante** : Si \( a > 0 \), la fonction est croissante.
+- **Décroissante** : Si \( a < 0 \), la fonction est décroissante.
+- **Constante** : Si \( a = 0 \), la fonction est constante.
+
+### Signe de \( f(x) \)
+| $x$      | $-\infty$ | $0$ | $+\infty$ |
+|----------|------------|-----|-----------|
+| $f(x)$   | +          | -   | +         |
+
 ### Représentation graphique
 <Diagram src="/maths/2x+1.png" invert={true} />
-<br />
-### Exemple 1 (fonction constante)
-Soit la fonction $f(x) = 2.
 
-La fonction est une constante, elle est donc horizontale.
-Peu importe la Variation de $x$, $f(x)$ restera égale à 2.
-<br />
-### Exemple 1.2 (fonction linéaire)
+### Exemple 1 : Fonction constante
+Soit la fonction \( f(x) = 2 \).  
+La fonction est constante, donc horizontale. Peu importe la variation de \( x \), \( f(x) \) reste égal à 2.
 
-Soit la fonction $f(x) = 2x.
+### Exemple 1.2 : Fonction linéaire
+Considérons la fonction \( f(x) = 2x \).  
+C'est une droite passant par l'origine et elle est croissante car \( a > 0 \).  
 
-La fonction est une droite passant par l'origine.
-Elle est croissante, car $a > 0$.
-
-On peut représenter cette fonction graphiquement, ou avec un tableau:
+**Tableau des valeurs :**
 | $x$ | $f(x)$ |
 |-----|-------|
 | 0   | 0     |
 | 1   | 2     |
 | 2   | 4     |
 | 3   | 6     |
-<br />
-### Exemple 1.3
-- Taxi 1: 5€ de prise en charge, 0.40€ par km
-- Taxi 2: pas de prise en charge, 0.60€ par km
 
-**question 1: Quel taxi est le moins cher pour 8km puis 30km?**
-<br />
-Taxi 1: $f(x) = 5 + 0.40x$
+### Exemple 1.3 : Comparaison de tarifs de taxi
+- **Taxi 1** : 5€ de prise en charge, 0.40€ par km.  
+  \( f(x) = 5 + 0.40x \)
 
-Taxi 2: $f(x) = 0.60x$
-<br />
-Les deux sont des fonctions croissante.
-<br />
-Si $x$ est égal a 8:
-- Taxi 1: $f(8) = 5 + 0.40*8 = 8.20€$
-- Taxi 2: $f(8) = 0.60*8 = 4.80€$
-<br />
-Si $x$ est égal a 30:
-- Taxi 1: $f(30) = 5 + 0.40*30 = 17€$
-- Taxi 2: $f(30) = 0.60*30 = 18€$
-<br />
-Taxi 1 est le moins cher pour 8km, et Taxi 2 est le moins cher pour 30km.
-<br />
-**question 2: Un client dispose de 12€, combien de km peut-il parcourir avec chaque taxi?**
-<br />
-Taxi 1: $f(x) = 5 + 0.40x$
+- **Taxi 2** : Pas de prise en charge, 0.60€ par km.  
+  \( f(x) = 0.60x \)
 
-Taxi 2: $f(x) = 0.60x$
-<br />
-Si $f(x) = 12€$:
-- Taxi 1: $12 = 5 + 0.40x$
-$$
-12 - 5 = 0.40x
-$$
-$$
-7 = 0.40x
-$$
-$$
-x = 17.5km
-$$
-<br />
-- Taxi 2: $12 = 0.60x$
-$$
-12 = 0.60x
-$$
-$$
-x = 20km
-$$
-<br />
-Le client peut parcourir 17.5km avec Taxi 1, et 20km avec Taxi 2.
+**Question 1** : Quel taxi est le moins cher pour 8 km puis pour 30 km ?
 
-### Exercice
-Voici les tarifs d'entrée d'un stad de foot:
-- Tarif 1: 8€
-- Tarif 2: 4€ avec la carte demi-tarif qui coute 40€
-- Tarif 3: L'abonnement pour la saison qui coute 92€
+Pour \( x = 8 \) :
+- Taxi 1 : \( f(8) = 5 + 0.40 \times 8 = 8.20€ \)
+- Taxi 2 : \( f(8) = 0.60 \times 8 = 4.80€ \)
 
-**Question 1**: Calculer pour chaque tarif, la dépense pour 6 entrées, 11 entrées, et 15 entrées. Dans chaque cas, quel est le tarif le plus avantageux?
-<br />
-**Réponse 1**:
-- Tarif 1: $f(x) = 8x$
-- Tarif 2: $f(x) = 4x + 40$
-- Tarif 3: $f(x) = 92$
-<br />
-Si $x = 6$:
-- Tarif 1: $f(6) = 8*6 = 48€$
-- Tarif 2: $f(6) = 4*6 + 40 = 64€$
-- Tarif 3: $f(6) = 92€$
-<br />
-Si $x = 11$:
-- Tarif 1: $f(11) = 8*11 = 88€$
-- Tarif 2: $f(11) = 4*11 + 40 = 84€$
-- Tarif 3: $f(11) = 92€$
-<br />
-Si $x = 15$:
-- Tarif 1: $f(15) = 8*15 = 120€$
-- Tarif 2: $f(15) = 4*15 + 40 = 100€$
-- Tarif 3: $f(15) = 92€$
-<br />
-Tarif 1 est le plus avantageux pour 6 entrées, Tarif 2 est le plus avantageux pour 11 entrées, et Tarif 3 est le plus avantageux pour 15 entrées.
+Pour \( x = 30 \) :
+- Taxi 1 : \( f(30) = 5 + 0.40 \times 30 = 17€ \)
+- Taxi 2 : \( f(30) = 0.60 \times 30 = 18€ \)
+
+**Conclusion** : Taxi 1 est le moins cher pour 8 km, et Taxi 2 est le moins cher pour 30 km.
+
+**Question 2** : Un client dispose de 12€, combien de km peut-il parcourir avec chaque taxi ?
+
+Pour \( f(x) = 12€ \) :
+- Taxi 1 : \( 12 = 5 + 0.40x \)  
+  \[
+  12 - 5 = 0.40x \implies 7 = 0.40x \implies x = 17.5 \text{ km}
+  \]
+
+- Taxi 2 : \( 12 = 0.60x \)  
+  \[
+  x = \frac{12}{0.60} = 20 \text{ km}
+  \]
+
+**Conclusion** : Le client peut parcourir 17.5 km avec Taxi 1 et 20 km avec Taxi 2.
+
+### Exercice : Tarifs d'entrée d'un stade de football
+- **Tarif 1** : 8€
+- **Tarif 2** : 4€ avec la carte demi-tarif qui coûte 40€
+- **Tarif 3** : Abonnement pour la saison à 92€
+
+**Question 1** : Calculer la dépense pour 6, 11, et 15 entrées pour chaque tarif et déterminer le tarif le plus avantageux.
+
+**Réponse 1** :
+- **Tarif 1** : \( f(x) = 8x \)
+- **Tarif 2** : \( f(x) = 4x + 40 \)
+- **Tarif 3** : \( f(x) = 92 \)
+
+Pour \( x = 6 \) :
+- Tarif 1 : \( f(6) = 8 \times 6 = 48€ \)
+- Tarif 2 : \( f(6) = 4 \times 6 + 40 = 64€ \)
+- Tarif 3 : \( f(6) = 92€ \)
+
+Pour \( x = 11 \) :
+- Tarif 1 : \( f(11) = 8 \times 11 = 88€ \)
+- Tarif 2 : \( f(11) = 4 \times 11 + 40 = 84€ \)
+- Tarif 3 : \( f(11) = 92€ \)
+
+Pour \( x = 15 \) :
+- Tarif 1 : \( f(15) = 8 \times 15 = 120€ \)
+- Tarif 2 : \( f(15) = 4 \times 15 + 40 = 100€ \)
+- Tarif 3 : \( f(15) = 92€ \)
+
+**Conclusion** : 
+- Tarif 1 est le plus avantageux pour 6 entrées.
+- Tarif 2 est le plus avantageux pour 11 entrées.
+- Tarif 3 est le plus avantageux pour 15 entrées.
+
 <Diagram src="/maths/multiple1.png" invert={true} />
-<br />
-**Question 2**: Avec le tarif 2, quelle est la dépense pour 18 entrées ?
-<br />
-**Réponse 2**:
-- Tarif 2: $f(x) = 4x + 40$
 
-Si $x = 18$:
-- Tarif 2: $f(18) = 4*18 + 40 = 112€$
-<br />
-La dépense pour 18 entrées est de 112€.
-<br />
-**Question 3**: Trouver $x$ tel que $g(x)=88$ (Tarif 2). Interpreter le résultat.
-<br />
-**Réponse 3**:
-- Tarif 2: $f(x) = 4x + 40$
+**Question 2** : Avec le tarif 2, quelle est la dépense pour 18 entrées ?
 
-Si $f(x) = 88€$:
-- Tarif 2: $88 = 4x + 40$
-$$
-88 - 40 = 4x
-$$
-$$
-48 = 4x
-$$
-$$
-x = 12
-$$
-<br />
-Le client peut acheter 12 entrées avec 88€.
-<br />
+**Réponse 2** : 
+- Tarif 2 : \( f(x) = 4x + 40 \)
+
+Pour \( x = 18 \) :
+- \( f(18) = 4 \times 18 + 40 = 112€ \)
+
+**Conclusion** : La dépense pour 18 entrées est de 112€.
+
+**Question 3** : Trouver \( x \) tel que \( g(x)=88 \) (Tarif 2). Interpréter le résultat.
+
+**Réponse 3** :
+- Tarif 2 : \( f(x) = 4x + 40 \)
+
+Pour \( f(x) = 88€ \) :
+- \( 88 = 4x + 40 \)  
+  \[
+  88 - 40 = 4x \implies 48 = 4x \implies x = 12
+  \]
+
+**Conclusion** : Le client peut acheter 12 entrées avec 88€.
+
 <div className="seperator" />
+
 ## Fonctions valeur absolue
 
 **Définition** : Pour tout $x$ dans $\mathbb{R}$, la fonction valeur absolue est définie par $f(x) = |x|$.
