@@ -1,0 +1,49 @@
+---
+type: page
+title: Les couches OSI
+tag: Réseaux
+author: Ardox
+---
+import Diagram from "../../comp/diagram.jsx"
+
+## Couche 1
+La couche 1 est la couche physique. Elle est responsable de la transmission des données brutes sur un support de transmission.
+Elle est chargée de la transmission des bits sur un support de transmission. Les protocoles de la couche 1 sont les protocoles
+de transmission, tels que Ethernet. 
+<br />
+On a comme exemple de support de transmission:
+- Les câbles en cuivre
+- Les fibres optiques
+- Les ondes radio
+- Les ondes lumineuses (pour les fibres optiques)
+<br />
+<div className="seperator" />
+## Couche 2
+La couche 2 est la couche liaison de données. Elle est responsable de la transmission des données entre les machines d'un réseau local.
+Elle est chargée de la détection et de la correction des erreurs, de la gestion du flux et du contrôle d'accès au support. Les protocoles
+de la couche 2 sont les protocoles de liaison, tels que Ethernet.
+<br />
+Par exemple, la couche 2 est responsable de la transmission des données entre un ordinateur et un switch.
+<br />
+<div className="seperator" />
+## Couche 3
+La couche 3 est la couche réseau. Elle est responsable de la transmission des données entre les machines d'un réseau. 
+Elle est chargée de l'adressage logique, du routage et de la commutation des paquets. Les protocoles de la couche 3 sont 
+les protocoles de routage, tels que IP.
+<br />
+Avant de continuer, il est important de comprendre que la majorité des reseaux sont interconnectées. Internet ne fait pas exception.
+<br />
+Maintenant, la question est **que faut il pour router l'info ?**
+<br />
+Pour répondre, il faut savoir que chaque machine d'un réseau possède une adresse IP unique. Cette adresse est composée de deux parties:
+- L'adresse réseau
+- L'adresse de l'hôte
+<br />
+L'adresse réseau permet de déterminer le réseau auquel appartient la machine. L'adresse de l'hôte permet de déterminer la machine sur le réseau.
+<br />
+Il existe deux types d'adresses IP:
+- **IPV4**: C'est le plus utilisé. Il est composé de 4 octets.
+- **IPV6**: Il est composé de 8 octets. Il a été créé pour pallier le manque d'adresses IPV4.
+<br />
+Pour plus d'infos, voir le cours sur les IP.
+<br />
