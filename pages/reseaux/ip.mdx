@@ -100,9 +100,26 @@ Il existe plusieurs types de découpage:
 - **VLSM**: Variable Length Subnet Mask. Cela permet de découper les adresses IP en blocs de tailles variables.
 <div className="seperator" />
 
-## Conclusion
-Les adresses IP sont essentielles pour le bon fonctionnement d'Internet. Sans elles, vous ne pourriez pas lire ces notes.
-Les IPV4 sont devenues insuffisantes, car les fournisseurs ont pas su doser. L'IPv6 a été créé pour pallier ce problème. 
-
-Et puis même, t'as vu la geule des armoires fibre ? Un vrai bordel.
-
+## Addressage IPV6 
+Pour rappel, on passe a l'IPV6 car l'IPV4 est en train de s'épuiser.
+<br />
+Du fait de la quantité pratiquement infinie d’adresses IPv6, il n’y a plus besoin d’adresse privée et publique et donc
+plus besoin du protocole NAT. Cela implique donc que les adresses IPv6 rétablissent la
+connectivité globale. Toutefois il existe une notion équivalente à l’adresse IP publique et privée en IPv6.
+<br />
+Une adresse préexiste toujours sur chaque interface activée en IPv6.
+<br />
+L’adresse IPv6 est toujours accompagnée d’un préfix. Il s’agit de l’équivalent de masque de sous réseaux et permet de
+déterminer le type d’adresse IPv6.
+<br />
+Il est possible d’avoir plusieurs adresses IPv6 sur une même interface, ce qui n’est pas le cas en IPv4.
+<br />
+Le broadcast disparait au profit de la multicast qui fait partie des spécifications de base d’IPv6, alors qu’elle est
+facultative en IPv4. La multidiffusion permet la transmission d’un paquet vers plusieurs destinations en une seule
+opération.
+<br />
+Implantation du protocole NDP : Neighbor Discovery Protocol (découverte des voisins) ». Ce protocole permet aux
+nœuds d'un réseau de découvrir leur voisinage. Pour ce qui nous intéresse principalement ici, c'est grâce à lui qu'une
+station qui démarre découvre les routeurs qui lui sont accessibles et que ceux-ci lui communiquent les paramètres
+nécessaires à sa configuration IPv6.
+<div className="seperator" />
