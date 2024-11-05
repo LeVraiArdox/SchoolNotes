@@ -1,0 +1,108 @@
+---
+type: page
+title: IPV4 et IPV6
+tag: Réseaux
+author: Ardox
+---
+import Diagram from "../../comp/diagram.jsx"
+
+# IPV4 et IPV6
+L'addresse IP appartient à la couche 3 du modèle OSI. Elle est responsable de l'adressage logique, du routage et de la commutation des paquets. 
+Les protocoles de la couche 3 sont les protocoles de routage, tels que IP.
+Son rôle est de permettre l'identification unique d'un appareil sur un réseau. Oui, même votre grille-pain connecté a besoin d'une adresse IP!
+
+## IPV4
+**IPv4** (Internet Protocol version 4) est la version la plus utilisée d'Internet Protocol. 
+Il est composé de 4 octets, soit 32 bits. Cela donne un total de 2^32 adresses possibles, 
+soit 4 294 967 296 adresses. Cela peut sembler beaucoup, mais avec l'explosion du nombre 
+d'appareils connectés à Internet, ces adresses sont devenues insuffisantes. C'est pour cela que 
+**IPv6** a été créé. Parce que, vous savez, on ne peut pas laisser votre réfrigérateur sans adresse IP!
+
+<div className="seperator" />
+## IPV6
+**IPv6** (Internet Protocol version 6) est la version la plus récente d'Internet Protocol.
+Il est composé de 8 octets, soit 128 bits. Cela donne un total de 2^128 adresses possibles,
+soit 340 282 366 920 938 463 463 374 607 431 768 211 456 adresses. Cela devrait suffire pour
+un bon moment. Oui, même si chaque grain de sable sur Terre avait une adresse IP, on serait encore bons!
+
+<div className="seperator" />
+## Configuration
+On peut configurer une adresse IP de deux manières:
+- **Statique**: L'adresse IP est configurée manuellement.
+- **Dynamique**: L'adresse IP est attribuée automatiquement par un serveur DHCP (Dynamic Host Configuration Protocol).
+
+Son écriture est souvent accompagnée d'un masque de sous-réseau. Ce dernier permet de déterminer le réseau auquel 
+appartient la machine et l'adresse de l'hôte. Parce que, soyons honnêtes, personne ne veut se retrouver sur le mauvais réseau!
+
+<div className="seperator" />
+## Masque de sous-réseau
+Le masque de sous-réseau est composé de 4 octets. Il est souvent écrit sous la forme d'une adresse IP.
+Il permet de déterminer le réseau auquel appartient la machine et l'adresse de l'hôte.
+Il est souvent écrit sous la forme d'une adresse IP.
+
+Si on regarde l'écriture binaire d'un masque de sous-réseau, on constate que les trois premiers octets sont à 1,
+ce qui signifie que ce sont les bits de l'adresse réseau. Si on compte les bits à 1, on verra que cela correspond
+à 24, qu'on retrouve souvent en tant que /24. Cela signifie que les 24 premiers bits sont ceux de l'adresse réseau (255.255.255.0).
+Parce que rien ne dit "je suis un geek" comme parler en binaire!
+
+<div className="seperator" />
+## L'épuisement des adresses IPV4   
+Avec l'explosion du nombre d'appareils connectés à Internet, les adresses IPV4 sont devenues insuffisantes.
+Pour rappel, il y a 4 294 967 296 adresses IPV4 possibles (on va arrondir à 4.2Ma).
+<br />
+Pour pallier ce problème, l'IPv6 a été créé. Il y a 340 282 366 920 938 463 463 374 607 431 768 211 456 adresses IPV6 possibles (on va arrondir à 340Ma).
+<br />
+À savoir, les adresses IP peuvent être découpées en blocs d'IP. Cela permet de réduire le nombre d'adresses utilisées.
+
+L'économie des adresses IP n'a pas été une priorité lors de la création de l'IPv4. En effet, certaines entreprises se sont vues attribuer 
+des blocs d'adresses IP entiers, alors qu'elles n'en avaient pas besoin. Cela a contribué à l'épuisement des adresses IPV4. Parce que, qui aurait pensé que chaque grille-pain aurait besoin d'une adresse IP?
+
+Que faire alors? Et bien, on peut utiliser des adresses IPV6. Cela permettra de ne pas manquer d'adresses IP.
+Sinon, en 1993, il y a eu la mise en place du CIDR (Classless Inter-Domain Routing). Cela permet de découper les adresses IP en blocs plus petits. Mais bon, 
+c'est un peu comme essayer de mettre un pansement sur une plaie ouverte. Cela ne résout pas le problème de fond.
+
+D'autres pansements, comme le NAT (Network Address Translation) ont été mis en place. Cela permet de traduire les adresses IP privées en adresses IP publiques.
+Il y a aussi le SNI (Server Name Indication) qui permet de gérer plusieurs certificats SSL sur un seul serveur IP.
+Ça reste des pansements, mais bon, c'est mieux que rien.
+
+<br />
+L'une des meilleures solutions pour l'IPV4 est la distinction entre les adresses IP publiques et privées. Les adresses IP privées ne sont pas routables sur Internet.
+Cela permet de réduire le nombre d'adresses IP utilisées. Il faudra tout de même distinguer les adresses IP privées et les plages d'adressage par défaut de ces classes.
+<br />
+en effet, il existe 3 classes d'adresses IP privées:
+| Classe | Début     | Masque      | CIDR |
+|--------|-----------|-------------|------|
+| A      |10.0.0.0   |255.0.0.0    |/8    |
+| B      |172.16.0.0 |255.255.0.0  |/16   |
+| C      |192.168.0.0|255.255.255.0|/24   |
+
+
+<div className="seperator" />
+## RIR
+Les RIR (Regional Internet Registry) sont des organisations qui gèrent les adresses IP. Il y en a 5:
+- **AFRINIC**: Afrique
+- **APNIC**: Asie-Pacifique
+- **ARIN**: Amérique du Nord
+- **LACNIC**: Amérique Latine et Caraïbes
+- **RIPE NCC**: Europe, Moyen-Orient et Asie Centrale
+Leur rôle est de distribuer les adresses IP aux entreprises et aux fournisseurs d'accès à Internet. Parce que même les entreprises ont besoin de leur dose d'IP!
+
+<div className="seperator" />
+## L'IANA 
+L'IANA (Internet Assigned Numbers Authority) est une organisation qui gère les adresses IP au niveau mondial.
+Elle est responsable de la coordination des adresses IP et des noms de domaine. Elle est également responsable de la gestion des adresses IPV6. Parce que quelqu'un doit bien s'occuper de tout ce bazar!
+
+<div className="seperator" />
+## Découpage réseau
+Les adresses IP peuvent être découpées en blocs d'IP. Cela permet de réduire le nombre d'adresses utilisées.
+Il existe plusieurs types de découpage:
+- **CIDR**: Classless Inter-Domain Routing. Cela permet de découper les adresses IP en blocs plus petits.
+- **VLSM**: Variable Length Subnet Mask. Cela permet de découper les adresses IP en blocs de tailles variables.
+<div className="seperator" />
+
+## Conclusion
+Les adresses IP sont essentielles pour le bon fonctionnement d'Internet. Sans elles, vous ne pourriez pas lire ces notes.
+Les IPV4 sont devenues insuffisantes, car les fournisseurs ont pas su doser. L'IPv6 a été créé pour pallier ce problème. 
+
+Et puis même, t'as vu la geule des armoires fibre ? Un vrai bordel.
+
