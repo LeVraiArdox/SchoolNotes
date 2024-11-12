@@ -22,8 +22,10 @@ Le modèle OSI est composé de sept couches numérotées de 1 à 7 :
 <br />
 Chacune des couches a un rôle bien précis et manipule un type de données à l’aide de protocoles qui lui sont propres
 <br />
+<div class="p-4 font-mono border-l-2 border-primary bg-mbg my-6">
 **À noter que chaque couche ne connait que les couches qui lui sont adjacentes**. Cela veut dire qu’une couche
 connait uniquement la couche qui la précède et celle qui la suit.
+</div>
 
 Exemple : La couche 2 Liaisons de données, ne connait donc que la couche 1 Physique (celle qui la précède) et la couche
 3 Réseaux (celle qui la suit).
@@ -32,11 +34,13 @@ Le tableau suivant nous donne les informations de base de chaque couche (rôle, 
 aborderons plus en détails chacun de ces couches.
 <Diagram src="/reseaux/ositab.png" />
 <br />
+<div class="p-4 font-mono border-l-2 border-green bg-mbg my-6">
 Pour les retenir, il existe une phrase mémotechnique que vous pouvez utiliser :
 
 **P**our **L**e **R**eseau **T**out **S**e **P**asse **A**utomatiquement
 
 **P**hysique, **L**iaison de données, **R**éseau, **T**ransport, **S**ession, **P**résentation, **A**pplication
+</div>
 <br />
 Voyons ce qui se passe entre chaque couche de notre modèle OSI lorsqu’une machine crée un data.
 <Diagram src="/reseaux/osi.png" />
@@ -49,7 +53,7 @@ dernière fois la donnée.
 
 **désencapsuler: procédé inverse montré par le schéma**
 <br />
-Maintenait voyons un cas concret comportant machine et équipement réseau, afin de comprendre ce qui se passe dans
+Maintenant voyons un cas concret comportant machine et équipement réseau, afin de comprendre ce qui se passe dans
 notre réseau.
 <Diagram src="/reseaux/osi2.png" />
 <br />
@@ -63,7 +67,9 @@ Elle est souvent appelée TCP/IP, d'après le nom de ses deux premiers protocole
 Control Protocol**) et **IP** (de l'anglais **Internet Protocol**). Ils ont été inventés par Vinton G. Cerf et Bob Kahn, travaillant
 alors pour la DARPA. La première publication de TCP/IP remonte à septembre 1973 lors d'une conférence de l'INWG.
 <br />
+<div class="p-4 font-mono border-l-2 border-green bg-mbg my-6">
 Le réseau ARPANET adopte le 1er janvier 1983 la suite de protocoles TCP/IP qui sera la base d'Internet.
+</div>
 <br />
 TCP/IP est composé de quatre couches :
 - **La couche 1** : Acces au reseau

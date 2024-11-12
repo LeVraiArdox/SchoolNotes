@@ -48,6 +48,7 @@ const Layout = (props) => {
           <button onClick={toggleTheme} className="" aria-label="Toggle theme">
             {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
           </button>
+          
         </div>
         <div className="flex gap-6 items-center">
           <a
