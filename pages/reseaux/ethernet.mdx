@@ -20,10 +20,9 @@ Le protocole Ethernet va nous permettre deux choses :
 <br />
 Ce qui va permettre de structurer le message et comprendre le message, qu’on appelle **trame**. Cette trame peut prendre
 plusieurs formes que nous allons devoir décortiquer dans les prochaines pages.
-<br />
-**À noter : en couche 2 il y a d’autres protocoles qu’Ethernet, mais il est de très loin le plus utilisé.**
-<br />
-
+<div class="p-4 font-mono border-l-2 border-primary bg-mbg my-6">
+À noter : en couche 2 il y a d’autres protocoles qu’Ethernet, mais il est de très loin le plus utilisé.**
+</div>
 ## Ethernet II
 
 Les trames Ethernet modernes ont été utilisées pour la première fois dans la structure dite Ethernet II avant
@@ -55,7 +54,10 @@ elle sera jetée. Si le CRC est identique, alors la trame est valide et elle ser
 Enfin pour terminer plusieurs champs vont venir encadrer notre **Trame Ethernet** afin de former un **Paquet Ethernet**:
 - **Le Préambule :** qui est une séquence de 7 octets qui permet de synchroniser les horloges des machines. Il est placé devant chaque trame.
 Comme la transmission de données est asynchrone, il est nécessaire de synchroniser les horloges des machines pour que la trame soit correctement reçue,
-sinon, une partie de la trame pourrait être perdue. **A noter que les deux derniers bits sont systematiquement à 1.**
+sinon, une partie de la trame pourrait être perdue. 
+<div class="p-4 font-mono border-l-2 border-primary bg-mbg my-6">
+**A noter que les deux derniers bits sont systematiquement à 1.**
+</div>
 - **Inter Frame Gap (IFG) ou temps inter-frame**: est un delai d'attente entre l'envoi de deux trames. Ce delai est egal a 96 bits soit 9.6 microsecondes
 pour un débit de 10 Mbit/s. Il permet de laisser le temps aux machines de se préparer à recevoir une nouvelle trame. **Attention, cette definition 
 a été revue en fobction des débits.** 
