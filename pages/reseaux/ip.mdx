@@ -6,120 +6,121 @@ author: Ardox
 ---
 import Diagram from "../../comp/diagram.jsx"
 
-# IPV4 et IPV6
-L'addresse IP appartient à la couche 3 du modèle OSI. Elle est responsable de l'adressage logique, du routage et de la commutation des paquets. 
-Les protocoles de la couche 3 sont les protocoles de routage, tels que IP.
-Son rôle est de permettre l'identification unique d'un appareil sur un réseau. Oui, même votre grille-pain connecté a besoin d'une adresse IP!
-
 ## IPV4
-**IPv4** (Internet Protocol version 4) est la version la plus utilisée d'Internet Protocol. 
-Il est composé de 4 octets, soit 32 bits. Cela donne un total de 2^32 adresses possibles, 
-soit 4 294 967 296 adresses. Cela peut sembler beaucoup, mais avec l'explosion du nombre 
-d'appareils connectés à Internet, ces adresses sont devenues insuffisantes. C'est pour cela que 
-**IPv6** a été créé. Parce que, vous savez, on ne peut pas laisser votre réfrigérateur sans adresse IP!
-
+L'adresse IP appartient à la couche 3 du modèle OSI et assure l'adressage logique, le routage et la commutation des paquets. Cette couche comprend les protocoles de routage, comme **IP**, et permet d'identifier de manière unique chaque appareil sur un réseau. Oui, même votre grille-pain connecté a besoin de son adresse IP!  
+<br />
+**IPv4** (Internet Protocol version 4) est la version la plus utilisée du protocole Internet. Elle utilise 4 octets, soit 32 bits, ce qui donne 2^32 adresses possibles (4 294 967 296 adresses). 
+<div class="p-4 font-mono border-l-2 border-primary bg-mbg my-6">
+Cela semble beaucoup, mais avec la croissance des appareils connectés, ces adresses sont devenues insuffisantes. D’où l'arrivée d'**IPv6**.
+</div>
 <div className="seperator" />
+
 ## IPV6
-**IPv6** (Internet Protocol version 6) est la version la plus récente d'Internet Protocol.
-Il est composé de 8 octets, soit 128 bits. Cela donne un total de 2^128 adresses possibles,
-soit 340 282 366 920 938 463 463 374 607 431 768 211 456 adresses. Cela devrait suffire pour
-un bon moment. Oui, même si chaque grain de sable sur Terre avait une adresse IP, on serait encore bons!
+**IPv6** (Internet Protocol version 6) est la version la plus récente du protocole Internet. Il utilise 8 octets, soit 128 bits, et offre donc 2^128 adresses possibles (environ 340 sextillions d’adresses!). Même en donnant une adresse IP à chaque grain de sable sur Terre, il en resterait encore... on est plutôt à l’aise ici.
 
 <div className="seperator" />
+
 ## Configuration
-On peut configurer une adresse IP de deux manières:
-- **Statique**: L'adresse IP est configurée manuellement.
-- **Dynamique**: L'adresse IP est attribuée automatiquement par un serveur DHCP (Dynamic Host Configuration Protocol).
+Une adresse IP peut être configurée de deux manières :
 
-Son écriture est souvent accompagnée d'un masque de sous-réseau. Ce dernier permet de déterminer le réseau auquel 
-appartient la machine et l'adresse de l'hôte. Parce que, soyons honnêtes, personne ne veut se retrouver sur le mauvais réseau!
+- **Statique**: Manuellement attribuée.
+- **Dynamique**: Attribuée automatiquement par un serveur **DHCP** (Dynamic Host Configuration Protocol).
+<br />
+Chaque adresse IP est accompagnée d'un **masque de sous-réseau**, qui indique le réseau et l'adresse de l'hôte. Parce qu’on préfère éviter les erreurs de réseau en se trompant de sous-réseau!
 
 <div className="seperator" />
+
 ## Masque de sous-réseau
-Le masque de sous-réseau est composé de 4 octets. Il est souvent écrit sous la forme d'une adresse IP.
-Il permet de déterminer le réseau auquel appartient la machine et l'adresse de l'hôte.
-Il est souvent écrit sous la forme d'une adresse IP.
-
-Si on regarde l'écriture binaire d'un masque de sous-réseau, on constate que les trois premiers octets sont à 1,
-ce qui signifie que ce sont les bits de l'adresse réseau. Si on compte les bits à 1, on verra que cela correspond
-à 24, qu'on retrouve souvent en tant que /24. Cela signifie que les 24 premiers bits sont ceux de l'adresse réseau (255.255.255.0).
-Parce que rien ne dit "je suis un geek" comme parler en binaire!
+Le **masque de sous-réseau** est composé de 4 octets et souvent présenté sous forme d'adresse IP. Sa fonction : distinguer le réseau de l’hôte. Par exemple, pour un masque /24 (255.255.255.0), les 24 premiers bits représentent le réseau.
 
 <div className="seperator" />
-## L'épuisement des adresses IPV4   
-Avec l'explosion du nombre d'appareils connectés à Internet, les adresses IPV4 sont devenues insuffisantes.
-Pour rappel, il y a 4 294 967 296 adresses IPV4 possibles (on va arrondir à 4.2Ma).
+
+## L'épuisement des adresses IPV4
+Avec l'augmentation des appareils connectés, les adresses **IPv4** ont commencé à manquer. 
+
+<div class="p-4 font-mono border-l-2 border-primary bg-mbg my-6">
+Pour rappel, il n’y a que 4,2 milliards d’adresses IPv4 possibles (un peu juste pour un monde hyperconnecté). C'est pourquoi **IPv6** a été développé avec ses 340 sextillions d'adresses.
+</div>
+
+Pour économiser ces adresses, on a d'abord découpé les adresses IP en blocs plus petits (CIDR), puis introduit des solutions comme le **NAT** (Network Address Translation). Ce sont un peu des "rustines", mais elles ont permis de repousser l’épuisement complet.
+
+Les adresses IPv4 sont divisées en adresses **publiques** et **privées**. Les adresses privées ne sont pas routables sur Internet, et sont regroupées en classes :
+  
+| Classe | Début     | Masque         | CIDR |
+|--------|-----------|----------------|------|
+| A      | 10.0.0.0  | 255.0.0.0      | /8   |
+| B      | 172.16.0.0| 255.255.0.0    | /16  |
+| C      | 192.168.0.0| 255.255.255.0 | /24  |
+
 <br />
-Pour pallier ce problème, l'IPv6 a été créé. Il y a 340 282 366 920 938 463 463 374 607 431 768 211 456 adresses IPV6 possibles (on va arrondir à 340Ma).
-<br />
-À savoir, les adresses IP peuvent être découpées en blocs d'IP. Cela permet de réduire le nombre d'adresses utilisées.
-
-L'économie des adresses IP n'a pas été une priorité lors de la création de l'IPv4. En effet, certaines entreprises se sont vues attribuer 
-des blocs d'adresses IP entiers, alors qu'elles n'en avaient pas besoin. Cela a contribué à l'épuisement des adresses IPV4. Parce que, qui aurait pensé que chaque grille-pain aurait besoin d'une adresse IP?
-
-Que faire alors? Et bien, on peut utiliser des adresses IPV6. Cela permettra de ne pas manquer d'adresses IP.
-Sinon, en 1993, il y a eu la mise en place du CIDR (Classless Inter-Domain Routing). Cela permet de découper les adresses IP en blocs plus petits. Mais bon, 
-c'est un peu comme essayer de mettre un pansement sur une plaie ouverte. Cela ne résout pas le problème de fond.
-
-D'autres pansements, comme le NAT (Network Address Translation) ont été mis en place. Cela permet de traduire les adresses IP privées en adresses IP publiques.
-Il y a aussi le SNI (Server Name Indication) qui permet de gérer plusieurs certificats SSL sur un seul serveur IP.
-Ça reste des pansements, mais bon, c'est mieux que rien.
-
-<br />
-L'une des meilleures solutions pour l'IPV4 est la distinction entre les adresses IP publiques et privées. Les adresses IP privées ne sont pas routables sur Internet.
-Cela permet de réduire le nombre d'adresses IP utilisées. Il faudra tout de même distinguer les adresses IP privées et les plages d'adressage par défaut de ces classes.
-<br />
-en effet, il existe 3 classes d'adresses IP privées:
-| Classe | Début     | Masque      | CIDR |
-|--------|-----------|-------------|------|
-| A      |10.0.0.0   |255.0.0.0    |/8    |
-| B      |172.16.0.0 |255.255.0.0  |/16   |
-| C      |192.168.0.0|255.255.255.0|/24   |
-
+<div class="p-4 font-mono border-l-2 border-primary bg-mbg my-6">
+**Le CIDR**, c'est un peu comme une maison avec plein de chambres. Plus le CIDR est petit, plus il y a de chambres (adresses) dans la maison (réseau).
+</div>
 
 <div className="seperator" />
-## RIR
-Les RIR (Regional Internet Registry) sont des organisations qui gèrent les adresses IP. Il y en a 5:
-- **AFRINIC**: Afrique
-- **APNIC**: Asie-Pacifique
-- **ARIN**: Amérique du Nord
-- **LACNIC**: Amérique Latine et Caraïbes
-- **RIPE NCC**: Europe, Moyen-Orient et Asie Centrale
-Leur rôle est de distribuer les adresses IP aux entreprises et aux fournisseurs d'accès à Internet. Parce que même les entreprises ont besoin de leur dose d'IP!
+
+## RIR (Regional Internet Registry)
+Les **RIR** sont des organisations qui distribuent les adresses IP aux entreprises et aux fournisseurs d'accès. Il en existe cinq :
+  
+- **AFRINIC** : Afrique
+- **APNIC** : Asie-Pacifique
+- **ARIN** : Amérique du Nord
+- **LACNIC** : Amérique Latine et Caraïbes
+- **RIPE NCC** : Europe, Moyen-Orient et Asie Centrale
+
+Les RIRs gèrent la distribution des adresses IP, parce qu’il faut bien un peu d’organisation dans ce chaos d’adresses!
 
 <div className="seperator" />
-## L'IANA 
-L'IANA (Internet Assigned Numbers Authority) est une organisation qui gère les adresses IP au niveau mondial.
-Elle est responsable de la coordination des adresses IP et des noms de domaine. Elle est également responsable de la gestion des adresses IPV6. Parce que quelqu'un doit bien s'occuper de tout ce bazar!
+
+## IANA
+L'**IANA** (Internet Assigned Numbers Authority) gère les adresses IP au niveau mondial et assure la coordination de ces adresses et des noms de domaine. Elle est également responsable des adresses **IPv6**, car quelqu’un doit bien veiller à ce que tout reste ordonné!
 
 <div className="seperator" />
-## Découpage réseau
-Les adresses IP peuvent être découpées en blocs d'IP. Cela permet de réduire le nombre d'adresses utilisées.
-Il existe plusieurs types de découpage:
-- **CIDR**: Classless Inter-Domain Routing. Cela permet de découper les adresses IP en blocs plus petits.
-- **VLSM**: Variable Length Subnet Mask. Cela permet de découper les adresses IP en blocs de tailles variables.
+
+## Types d'adresses IPv6
+Il existe plusieurs types d’adresses IPv6 :
+
+- **Unicast** : Identifie une seule interface.
+- **Multicast** : Identifie un groupe de nœuds.
+
+<Diagram src="https://castr.com/blog/wp-content/uploads/2023/05/Unicast-vs-Multicast-vs-Broadcast-1-scaled.jpg" />
+
 <div className="seperator" />
 
-## Addressage IPV6 
-Pour rappel, on passe a l'IPV6 car l'IPV4 est en train de s'épuiser.
-<br />
-Du fait de la quantité pratiquement infinie d’adresses IPv6, il n’y a plus besoin d’adresse privée et publique et donc
-plus besoin du protocole NAT. Cela implique donc que les adresses IPv6 rétablissent la
-connectivité globale. Toutefois il existe une notion équivalente à l’adresse IP publique et privée en IPv6.
-<br />
-Une adresse préexiste toujours sur chaque interface activée en IPv6.
-<br />
-L’adresse IPv6 est toujours accompagnée d’un préfix. Il s’agit de l’équivalent de masque de sous réseaux et permet de
-déterminer le type d’adresse IPv6.
-<br />
-Il est possible d’avoir plusieurs adresses IPv6 sur une même interface, ce qui n’est pas le cas en IPv4.
-<br />
-Le broadcast disparait au profit de la multicast qui fait partie des spécifications de base d’IPv6, alors qu’elle est
-facultative en IPv4. La multidiffusion permet la transmission d’un paquet vers plusieurs destinations en une seule
-opération.
-<br />
-Implantation du protocole NDP : Neighbor Discovery Protocol (découverte des voisins) ». Ce protocole permet aux
-nœuds d'un réseau de découvrir leur voisinage. Pour ce qui nous intéresse principalement ici, c'est grâce à lui qu'une
-station qui démarre découvre les routeurs qui lui sont accessibles et que ceux-ci lui communiquent les paramètres
-nécessaires à sa configuration IPv6.
+### Node-local (Loopback)
+Cette adresse est l’équivalent de l’adresse de bouclage IPv4 (127.0.0.1). En IPv6, le bouclage utilise l'adresse spéciale **::1/128**.
+
+### Link-local
+Les adresses Link-Local, qui commencent par **fe80::/10**, sont spécifiques à un lien de niveau 2 et ne sont jamais transférées par les routeurs. Toutes les interfaces IPv6 ont une adresse Link-Local, ce qui les rend idéales pour la découverte de voisins et la configuration automatique.
+
+### Global Unicast
+Similaire aux adresses publiques IPv4, les **Global Unicast** sont globalement routables. Les adresses de ce type commencent généralement par **2000::/3** et permettent l’interconnexion des réseaux sur Internet.
+
+### Unique Local
+Définies dans le **RFC 4193**, les **Unique Local Addresses (ULA)** sont comparables aux adresses privées IPv4 (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16). Elles ne sont pas routables sur Internet et permettent le routage privé entre sites interconnectés de manière sécurisée.
+
+### Multicast Assigned
+Ces adresses sont prédéfinies pour identifier des services spécifiques et bien connus. Elles commencent toujours par **FF**. Les adresses **FF02** sont limitées à un réseau local.
+
+### Solicited-Node
+En IPv6, la table **ARP** d’IPv4 est remplacée par le **Neighbor Discovery Protocol** (NDP). Une adresse **Solicited-Node Multicast** (FF02::1:ff00:0/104) permet de découvrir l’adresse de couche 2 (L2) d’un voisin sans diffusion globale (pas de Broadcast en IPv6).
+
+<div className="seperator" />
+
+## Écriture d'adresse IPv6
+Les adresses IPv6, écrites en hexadécimal sur 8 groupes de 4 chiffres (128 bits au total), sont certes longues, mais des règles de simplification existent pour les écrire de manière plus concise :
+
+- Les zéros initiaux de chaque bloc peuvent être omis.
+  <div class="p-4 font-mono border-l-2 border-white bg-mbg my-6">
+  Exemple : `FE80:0000:0000:0000:BB38:9F98:0241:8A95` devient `FE80::BB38:9F98:0241:8A95`
+  </div>
+- Un bloc consécutif de zéros peut être remplacé une seule fois par `::`.
+  <div class="p-4 font-mono border-l-2 border-white bg-mbg my-6">
+  Exemple : `2001:0DB8:00F4:0845:0000:0627:E202:24FE` devient `2001:DB8:F4:845:0:627:E202:24FE`
+  </div>
+
+<div class="p-4 font-mono border-l-2 border-red bg-mbg my-6">
+Attention aux erreurs de suppression de zéros ! Utiliser cette règle à tort peut rendre une adresse IPv6 ambiguë.
+</div>
+
 <div className="seperator" />
