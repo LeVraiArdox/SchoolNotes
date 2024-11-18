@@ -4,7 +4,7 @@ const Diagram = ({ src, invert = false }) => {
   if (!invert) {
     return <img src={src} alt="Diagram" className="diagram" />;
   } else {
-    return <img src={src} alt="Diagram" className="diagram invert" />;
+    return <img src={src} alt="Diagram" className="diagram" />;
   }
 };
 

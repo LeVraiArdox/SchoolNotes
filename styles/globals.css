@@ -153,8 +153,9 @@ th, td {
     color: var(--shiki-color-text);
 }
 
-.invert {
-    filter: invert(1);
+
+.markdown-content .diagram {
+    @apply my-4 rounded-xl w-full invert-0 dark:invert transition;
 }
 
 :root {
