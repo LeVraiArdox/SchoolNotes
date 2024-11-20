@@ -1,0 +1,85 @@
+---
+type: page
+title: Les comptes utilisateurs et les droits Windows
+tag: windows
+author: Ardox
+---
+import Diagram from "../../comp/diagram.jsx"
+
+Les droits existent pour plusieurs raisons :
+- distinguer les droits administrateur, car l'administrateur sera le seul à
+pouvoir modifier les paramètres système de l'OS et les droits des autres
+utilisateurs
+- deuxièmement, lorsque plusieurs utilisateurs se partagent un même
+ordinateur, cela permet de séparer l’espace de chacun
+- enfin, si des dossiers sont partagés sur le réseau, cela permet de définir
+qui a ou n’a pas le droit de consulter ou modifier un fichier.
+
+<div className="seperator" />
+## Listez les utilisateurs présents sur votre ordinateur
+<div className="p-4 font-mono border-l-2 border-red bg-mbg my-6">
+Attention : cette opération n’est disponible qu’avec une version Pro ou
+Entreprise de Windows.
+</div>
+Pour voir le nombre d’utilisateurs présents sur votre ordinateur, faites un clic
+droit sur le menu Démarrer de Windows et cliquez sur **« Gestion de l’ordinateur ».**
+<br />
+Une fois ouvert, dans le volet de gauche sous **Gestion de l'ordinateur >Outils
+système >Utilisateurs et Groupes locaux**, cliquez sur **« Utilisateurs »**
+<br />
+Vous pouvez voir, dans le volet central, le compte portant votre nom (dans mon
+cas formateur) ainsi que d'autres comptes. Il s'agit de **comptes créés par
+Windows mais désactivés.**
+<br />
+Faites un double clic sur votre compte pour voir les propriétés et regardez l'onglet
+« Membres de ».
+
+Vous voyez que votre utilisateur est membre de deux groupes :
+- le groupe Administrateurs
+- le groupe Utilisateurs
+
+<div className="seperator" />
+## Les groupes
+Les groupes sont utiles car ils facilitent la **gestion des droits utilisateur**. En effet,
+au lieu d'attribuer des droits similaires à chaque nouvel utilisateur, vous allez
+pouvoir **créer un groupe avec certains droits**, puis ajouter des utilisateurs à ce
+groupe, **ce qui vous fera gagner du temps**.
+<br />
+Par défaut, Windows place votre utilisateur dans le groupe **Administrateurs** et
+dans le groupe Utilisateurs. Le groupe Administrateurs a le **droit d'installer des
+softwares et peut regarder les dossiers de n'importe quel utilisateur, alors que
+le groupe Utilisateurs ne peut pas installer de software et ne peut consulter
+que ses propres fichiers.**
+<br />
+<div className="seperator" />
+## Les utilisateurs
+Prenons comme exemple le cas où une autre personne utiliserait votre ordinateur.
+Commencez donc par l'ajouter. Pour cela, replacez-vous dans la partie « Utilisateur » 
+et, dans le volet central, faites un clic droit sur **« Nouvel utilisateur »**
+<br />
+Si vous n'enregistrez pas de mot de passe, il devra le créer à sa première
+connexion.
+<br />
+<div className="p-4 font-mono border-l-2 border-red bg-mbg my-6">
+Notez qu'il faut toujours disposer d'un compte administrateur sur un
+ordinateur. C'est pourquoi je vous recommande d'activer l'utilisateur
+« administrateur » et de lui donner un mot de passe.
+</div>
+
+<div className="seperator" />
+## Ce qu'il faut retenir
+- Pour gérer les utilisateurs, il faut vous rendre dans l'outil « Gestion de
+l'ordinateur ».
+- Un utilisateur est attaché à un ou plusieurs groupes.
+- Les groupes vous permettent de simplifier la gestion des utilisateurs, en
+regroupant les utilisateurs ayant les mêmes droits. Par exemple le groupe
+Administrateurs, le groupe Développeurs, le groupe Ressources humaines,
+etc.
+- Windows différencie le groupe Administrateurs pouvant installer des
+softwares et modifier les fichiers système de l'OS, et le groupe Utilisateurs
+qui ne peut installer de softwares seul.
+- Chaque utilisateur se voit attribuer un répertoire personnel. Ce répertoire
+n'est accessible que par lui ou par un utilisateur membre du groupe
+Administrateurs.
+- Pour qu'un utilisateur ait accès à un dossier appartenant à un autre
+utilisateur il faut que ce dossier lui soit partagé.

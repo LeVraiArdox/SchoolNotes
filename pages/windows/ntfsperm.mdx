@@ -96,3 +96,39 @@ stagiaire individuellement à la liste, et lui refuser tout accès. Le refus d'u
 d'accès.
 Les autorisations NTFS sont maintenant effectives. Tester avec le compte Stagiaire Comptable ou Opérateur
 de saisie en essayant d'ouvrir le dossier Confidentiel.
+
+<div className="seperator" />
+# Le partage NTFS 
+## Définition du partage
+Le partage permet de mettre à disposition sur le réseau des ressources qui sont stockées dans un ordinateur
+ou dans un serveur de fichiers.
+<br />
+La gestion des droits est la même que celle de la permission NTFS, à la différence qu'elle ne se situe pas au
+niveau de l'ordinateur local, mais au niveau du **réseau local**.
+<br />
+Contrairement à sa version locale, l'autorisation réseau concerne indistinctement toute une arborescence.
+Le nombre d'utilisateurs connectés en simultané peut être défini.
+
+<div className="seperator" />
+## Notions fondamentales
+La liste des permissions de partage a moins d'options que celle des permissions NTFS
+- Lecture : Lire, parcourir les dossiers et sous-dossiers, voir les propriétaires.
+- Modifier : Toutes les autorisations précédentes, en y ajoutant l'ajout, la modification (sauf celle des
+autorisations) et la suppression (sauf celle d'une arborescence).
+- Contrôle Total : Toutes les autorisations, y compris celle de modifier les autorisations (administrateurs).
+
+<div className="p-4 font-mono border-l-2 border-primary bg-mbg my-6">
+Le refus, dans une ACE, est prioritaire face à l'autorisation.
+</div>
+
+<div className="seperator" />
+## Mise en place du partage
+- Cliquer droit sur le dossier ou le fichier, puis Partage > Partager
+- Ensuite, on peut ajouter, modifier ou supprimer des droits d'accès à des utilisateurs.
+- Le partage est effectif. Le nom de partage est \\NomDeMachine\Dossier.
+- On retrouve le même système d'autorisation que dans les permissions NTFS, sauf qu'il n'y a que 3 ACE :
+Contrôle total, Modifier et Lecture.
+- Les droits les plus restrictifs, quels qu'ils soient, l'emportent sur toutes les autorisations, y compris Contrôle
+total.
+- Pour plus de facilité de gestion, on peut choisir de laisser tous les accès en partage et de restreindre en
+permissions NTFS
