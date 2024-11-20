@@ -1,6 +1,6 @@
 # SchoolNotes
 
-This is a website i made for me and my classmates where i write all the notes i take during the courses.
+This is a website i made (or stole from chadcat7) for me and my classmates where i write all the notes i take during the courses.
 You can find each chapter with the title and difficulty level, and you can also find some other files like excel files, pdfs, etc.
 
 ## Installation
