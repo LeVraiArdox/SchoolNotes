@@ -1,0 +1,60 @@
+---
+type: page
+title: Les points de restauration
+tag: windows
+author: Ardox
+---
+import Diagram from "../../comp/diagram.jsx"
+
+La restauration du système remet en état votre ordinateur, **récupère le système à une date antérieure**
+dans le temps. Cette fonctionnalité ne donne pas la possibilité de récupérer un fichier personnel qui a été
+supprimé ou endommagé. Il est nécessaire et judicieux de sauvegarder régulièrement vos fichiers
+personnels et données importantes. Via le panneau de configuration et Centre de sauvegarde et de
+récupération. **Seuls les fichiers du système sont sauvegardés** et, éventuellement, restaurés. Vos
+fichiers personnels (documents textes, documents tableurs, images, sons, vidéos, présentations ...) ne
+sont aucunement pris en compte. La création d'un point de restauration ne constitue donc **nullement une
+sauvegarde de vos données personnelles !**
+<br />
+Par voie de conséquence : Vous pouvez utiliser vos points de restauration sans craindre de perdre vos
+fichiers personnels. Il vous est très vivement **conseillé de sauvegarder** à part l'ensemble de vos
+documents sur des supports de stockage externes pour vous prémunir de tout désastre possible.
+
+<div className="seperator" />
+## Créer un point de restauration
+- **Ouvrir le menu exécuter (touche Windows+R), puis saisir sysdm.cpl et valider.**
+- **Choisir l'onglet Protection du système puis sélectionnez le disque sur lequel un point de restauration
+doit être créé pour enfin cliquez sur le bouton Créer**.
+
+<div class="p-4 font-mono border-l-2 border-primary bg-mbg my-6">
+Notez que Windows crée régulièrement des points de restauration système, il n'est généralement pas
+utile d'en créer soi-même. Par ailleurs, il est recommandé de ne pas en créer de façon trop régulière.
+Chacune des partitions (disques durs) doivent être paramétrées séparément et individuellement,
+pour autoriser ou non la restauration.
+</div>
+Philippe ALEXIS - 2024 5
+Il n'est peut-être pas utile d'autoriser la restauration pour des partitions ne contenant que des données
+personnelles. La restauration peut faire perdre des données. Il est par conséquent préférable de faire des
+sauvegardes régulières.
+
+<div className="seperator" />
+## Supprimer un point de restauration
+La création de points de restauration accapare de la place sur le disque dur. Plus ils sont nombreux, plus
+de l'espace disque libre est pris. Or cette taille est limitée. Même avec les gros disques durs actuels, un
+peu de nettoyage est donc nécessaire
+
+- **Ouvrir le menu exécuter (touche Windows+R), puis saisir sysdm.cpl et valider.**
+- **Choisir l'onglet Protection du système puis sélectionnez le disque sur lequel un point de restauration
+doit être créé pour enfin cliquez sur le bouton Configurer.**
+- **Cliquez sur le bouton Supprimer pour supprimer tous les points de restauration.**
+<div class="p-4 font-mono border-l-2 border-red bg-mbg my-6">
+Attention : une fois supprimé, un point de restauration ne peut être récupéré.
+</div>
+<div className="seperator" />
+## Restaurer un point de restauration
+- **Ouvrir le menu exécuter (touche Windows+R), puis saisir rstrui et valider.**
+- **Cliquez sur Suivant.**
+- **Sélectionnez le point de restauration à restaurer.**
+- **Cliquez sur Suivant.**
+- **Cliquez sur Terminer.**
+- **Confirmez en cliquant sur Oui.**
+- **Redémarrez votre ordinateur.**

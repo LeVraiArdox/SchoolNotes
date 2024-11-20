@@ -1,0 +1,95 @@
+---
+type: page
+title: La base de registre
+tag: windows
+author: Ardox
+---
+import Diagram from "../../comp/diagram.jsx"
+
+Dans les premières versions de Microsoft Windows, les applications installées étaient configurées vis-à-
+vis de Windows grâce à des **fichiers de configuration** (dont l'extension était .ini). Depuis, Microsoft a
+décidé de regrouper toutes les informations dans deux fichiers (que l'on appelle "**base de registre**"). Il
+s'agit des fichiers :
+- "**user.dat**" - contenant les paramètres **utilisateur**
+- "**system.dat**" - contenant les paramètres **système**
+Microsoft a conservé les fichiers "system.ini" et "win.ini" pour assurer la compatibilité avec les programmes
+fonctionnant sous Windows 3.1
+<br />
+Le but de cette base de registre est de **regrouper toutes les informations de configuration**, pour d'une
+part créer un semblant d'organisation, d'autre part limiter le nombre de fichiers de configuration dans le
+disque dur. La base de registre est un fichier contenant une **arborescence** dans laquelle les paramètres
+sont classés par critère. A chaque critère correspond une branche qui peut encore être subdivisée en
+autres branches (une arborescence). Chaque élément de configuration est situé tout au bout d'une
+branche dans ce que l'on nomme "une **clé**".
+<br />
+Le problème majeur de cette base de registre est que, suite à l'installation d'un programme, il se crée
+**plusieurs clés dans divers endroits de la base de registre**. Cependant, à la désinstallation, les clés sont
+effacées (dans le meilleur des cas) mais **l'arborescence reste**. Lorsque vous installez de nombreux
+programmes et que vous les effacez, le système **ralentit**. Il faut au bout d'un certain temps réinstaller
+Windows.
+<br />
+<div className="seperator" />
+## Éditer la base de registre
+Il est possible de modifier ce gigantesque capharnaüm, mais cela ne se fait pas sans précautions (la base
+de registre est **le cœur de Windows** - pas de base de registre, pas de Windows). Avant toute chose, il
+faut créer une sauvegarde de la base de registre, qui vous permettra de revenir à vos paramètres initiaux
+en cas d'erreur ! Enfin, il faut lancer le programme "C:WindowsRegedit.exe" en faisant touche Windows+R,
+puis en tapant **Regedit**.
+<br />
+Il ne vous reste plus qu'à modifier les clés que vous voulez éditer.
+L'éditeur est composé de 2 colonnes : à gauche figurent les clés, à droite leurs valeurs.
+<br />
+Lorsque vous double-cliquez sur une clé (dans la colonne de gauche), une entrée est visible, il s'agit de
+la valeur de cette clé. Les valeurs présentes dans la base de registre ont différents types. Il existe une
+centaine de types mais **seulement 16 à 20 types** de données sont utilisés par Windows couramment. En
+ce qui vous concerne, les modifications dans la base de registre s’effectuent la plupart du temps sous
+**deux** types de données :
+- **REG_SZ** : contenant une seule **chaîne de caractères** terminée par un caractère nul.
+- **REG_DWORD** : **valeur numérique** exprimé en hexadécimal ou décimal, d’une longueur de 4 octets.
+La plupart du temps, les changements s’opèrent sur le mode du vrai/faux. La donnée sera alors
+modifiable par 1 ou 0 selon l’activation ou non d’une stratégie.
+<div class="p-4 font-mono border-l-2 border-red bg-mbg my-6">
+Une clé ou une valeur peuvent être vide. Attention toutefois, une valeur à 0 ne signifie pas que la clé
+ne sert à rien !
+</div>
+<div className="seperator" />
+## Description des branches
+Dans l'éditeur de base de registre (regedit.exe) vous apercevez les branches principales suivantes :
+- **HKEY_CLASSES_ROOT (appelé HKCR)** : elle contient toutes les **associations de fichiers**, le nom
+des premières clés correspond à l'extension de fichier à laquelle on s'intéresse. Plus bas dans
+l'arborescence sont indiquées des clés correspondant aux noms des types de fichiers, auxquelles
+sont attribuées comme l'icône par défaut (DefaultIcon), le type d'action associée (shell : ouvrir,
+exécuter, ...), etc.
+- **HKEY_CURRENT_USER (appelé HKCU)** : elle contient les paramètres de **l'utilisateur actuel**. C'est
+dans cette branche que sont stockées les informations de configuration de l'utilisateur actuel.
+- **HKEY_LOCAL_MACHINE (appelé HKLM)** : elle contient toutes les informations concernant votre
+machine (matériel, logiciels, etc.). C'est dans cette branche que sont stockées les informations
+de configuration de la machine.
+- **HKEY_USERS (appelé HKU)** : elle contient les paramètres de **tous les utilisateurs** de la machine.
+- **HKEY_CURRENT_CONFIG (appelé HKCC)** : elle contient les informations de configuration
+**actuelles** de la machine.
+
+<div className="seperator" />
+## Sauvegarder la base de registre
+Lors de l'installation d'un nouveau matériel ou logiciel, certains réglages sont enregistrés dans la base de
+registre et il peut arriver qu'ils endommagent et empêchent l'accès à des fonctions importantes de
+Windows. Il est également possible d'abîmer le registre en le modifiant et en faisant une erreur. Dans
+ces cas-là, une réinstallation de Windows et des logiciels est souvent la seule solution. Pour éviter cela,
+il est conseillé d'effectuer une **sauvegarde du Registre** avant de faire une manipulation importante sur
+votre PC.
+<br />
+Pour ce faire, ouvrez l'éditeur du registre (Windows+R / Regedit). La fenêtre qui s'ouvre correspond au
+registre. Ouvrez le menu "Fichier", puis cliquer sur "Exporter". Dans la fenêtre qui s'ouvre, vous devez
+choisir où et sous quel nom enregistrer le fichier. Dans la liste déroulante "Enregistrer dans", choisissez
+par exemple votre bureau, et comme nom, il est recommandé de choisir un nom explicite, détaillant
+pourquoi et quand vous avez sauvegardé ce fichier. Par exemple : "registre_avant-installation-
+firefox_2018-01-18-10H29.reg".
+<br />
+<div className="seperator" />
+## Restaurer la base de registre
+Pour restaurer une sauvegarde de la base de registre, il suffit de double-cliquer sur le fichier de sauvegarde
+que vous avez créé. Une fenêtre s'ouvre, vous demandant si vous voulez ajouter les informations du fichier
+dans le registre. Cliquez sur "Oui" pour restaurer les informations. Si vous avez fait une erreur, vous pouvez
+toujours restaurer une sauvegarde précédente.
+<br />
+<div className="seperator" />

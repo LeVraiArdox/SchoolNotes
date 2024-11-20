@@ -1,0 +1,356 @@
+---
+type: page
+title: Glossaire Windows
+tag: windows
+author: Ardox
+---
+import Diagram from "../../comp/diagram.jsx"
+
+# Glossaire Windows 10
+<div className="seperator" />
+## A
+
+### Activation
+Processus de validation de la licence de Windows 10
+
+### Adresse APIPA
+Adresse autoconfigurée de Windows si l'ordinateur est configuré pour utiliser TCP/IP et qu'aucun serveur DHCP n'est pas disponible. Les adresses APIPA sont de type 169.254.X.X
+
+### Analyseur de performances
+Permet d'audit et d'obtenir un rapport sur ressource utilisée. Les éléments analysés sont :
+- Le processeur
+- La mémoire
+- Le disque
+- Le réseau
+
+L'analyseur de performance permet de réaliser des analyses planifiées.
+
+### Application Paramètres
+Application de gestion des paramètres de Windows 10
+
+### Architecture processeur
+Windows 10 prend en charge quatre architectures de processeur :
+- 32 bits : jeu d'instruction x86
+- 64 bits : jeu d'instruction AMD64
+- ARM32 Bits
+- ARM64 Bits
+
+<div className="seperator" />
+
+## B
+
+### BitLocker
+Système de chiffrement de disque. BitLocker chiffre l'intégrité du volume y compris les données, les applications et les fichiers systèmes. BitLocker couplé à un module TPM vérifie l'intégrité du système lors de son démarrage.
+
+### BitLocker to Go
+BitLocker To Go est le système de chiffrement de périphérique de stockage amovible
+
+<div className="seperator" />
+
+## C
+
+### Compte utilisateur
+Fournit une identification et une authentification définissant les accès de l'utilisateur.
+
+### Console de composants enfichable – MMC.exe
+Le console MMC est un outil personnalisable permettant d'ajouter des composants utiles à l'administration de Windows 10
+
+<div className="seperator" />
+
+## D
+
+### DHCP
+Dynamic Host Configuration Protocol, protocole de configuration automatique des adresses TCP/IP v4 et v6
+
+### Diskpart
+Outil de gestion des disque-durs en ligne de commande. Diskpart permet de créer des scripts de configuration de disque
+
+### Disque de base
+Format de disque "élémentaire" ne permettant que la création de volume simple
+
+### Disque dur virtuel
+Fichier d'émulation de disque-dur. Les données seront stockées dans un fichier que Windows et les applications utilise comme un disque
+
+### Disque Dynamique
+Format de disque permettant la création de :
+- Volumes miroirs
+- Fractionnés
+- Agrégés par bande
+
+### Disque GPT
+Nouveau système de partitionnement supporté depuis Windows Vista. Permet jusqu'à 128 partitions et offre une tolérance de panne
+
+### Disque MBR
+Type de partitionnement de disque dur supporté sur Windows 10 et les versions précédentes de Windows. Permet 4 partitions de 2To maximum
+
+### DNS
+Domain Naming Server, serveur de résolution de nom
+
+### Domaine
+Groupe d'ordinateur fonctionnant de manière centralisée. Un contrôleur de domaine autorise les connexions et gère les authentifications
+
+### Dossiers partagés
+Fonction permettant l'accès d'un dossier au travers du réseau
+
+### Dossiers partagés : partage avancés
+Méthode de partage permettant des options de personnalisation et de sécurité plus complète
+
+### Dossiers partagés : partage simple
+Méthode partage simple, les fonctions de personnalisation sont limitées
+
+### Driverquery.exe
+/SI - outil de vérification en ligne de commande de la signature des pilotes de périphérique
+
+<div className="seperator" />
+
+## E
+
+### Editeur de stratégies de groupe locale
+L'éditeur de stratégie de groupe locale est l'outil de configuration des stratégies de groupe. Il s'exécute en tapant GPEDIT.MSC
+
+### Espace de stockage
+Fonctionnalité de Windows 10 permettant de créer et gérer des volumes de type miroir à deux disques (miroir bidirectionnel), miroir à trois disques (miroir tridirectionnel) ou agrégat par bande avec parité (RAID-5)
+
+<div className="seperator" />
+
+## F
+
+### Fragmentation
+Processus entrainant une dégradation des performances E/S sur un disque-dur mécanique. Des fragments de fichiers sont écrits à différents emplacements sur le disque-dur, les accès multiples dégradent la vitesse de lecture et d'écriture. Une défragmentation de disques est planifiée tous les mercredis à 12h00
+
+<div className="seperator" />
+
+## G
+
+### Gestion de l'ordinateur
+Console d'administration de l'ordinateur, regroupe les outils essentiels à l'administration de l'ordinateur
+
+### Gestionnaire de périphérique
+Outil de gestion des périphériques et des pilotes
+
+### Gestionnaire des taches
+Outil de gestion des applications, processus et ressources de l'ordinateur. Permet également de gérer les applications lors du démarrage de l'ordinateur et les services.
+
+### Groupe de travail
+Groupe d'ordinateur fonctionnant ensemble et accessible au travers de l'explorateur de fichiers. L'authentification n'est pas centralisé.
+
+<div className="seperator" />
+
+## H
+
+### Historique de fiabilité
+Outil graphique présentant une chronologie et une courbe de fiabilité de l'ordinateur. Les évènements comportent les informations et un lien permettant de diagnostiquer les problèmes
+
+### Historique de fichiers
+Outil de sauvegarde permettant de sauvegarder les fichiers modifiés toutes les heures afin de revenir à une version précédente en cas de problème
+
+<div className="seperator" />
+
+## I
+
+### Invite de commande
+L'invite de commande (cmd.exe) est un interpréteur de commande permettant d'exécuter des commandes d'administration du système ou des fichiers
+
+### Ipconfig
+Commande permettant d'afficher la configuration TCP/IP de l'ordinateur. Equivalente à Get-NetIPAdress en PS
+
+<div className="seperator" />
+
+## M
+
+### Magasin de pilote
+Dossiers contenant les pilotes de périphérique : c:\windows\system32\driverstore
+
+### Migration
+Processus de mise à jour nécessitant la sauvegarde des données et paramètres utilisateurs et nécessitant la réinstallation des applications
+- Migration "côte à côte" (Side by Side) : quand l'utilisateur change d'un ancien ordinateur à un nouveau
+- Migration "effacer et recharger" (Wipe and Load) : quand l'ordinateur est réinstallé.
+
+### Mise à niveau sur place
+Processus de mise à jour de Windows 10 en partant d'une version précédente de Windows. La mise à niveau ne nécessite pas réinstaller les applications. Les données et paramètres utilisateurs sont conservés
+
+### Moniteur de ressources
+Outil graphique d'analyse des ressources utilisées par une application.
+Les éléments analysés sont :
+- Le processeur
+- Le disque
+- La mémoire
+- Le réseau
+
+<div className="seperator" />
+
+## N
+
+### Nom d'ordinateur
+Nom convivial de l'ordinateur permettant son accès de façon conviviale. Le nom d'ordinateur seul ne peut dépasser 15 caractères maximum. Limitation héritée de NetBios. Depuis 2000, Windows utilise les noms DNS pour qualifier pleinement l'ordinateur.
+
+### Noyau
+Le noyau est le composant de base qui permet aux différentes taches de Windows d'accéder à la couche d'abstraction matériel
+
+<div className="seperator" />
+
+## O
+
+### Observateur d'évènements
+Outil de journalisation des informations, avertissements et erreurs de Windows 10 et des applications. Les évènements sont contenus dans des journaux, chaque évènement dispose d'un numéro unique permettant de rechercher des solutions
+
+### Options de démarrage avancées
+Série de commandes exécutable pour diagnostiquer Windows 10. Les options avancées sont accessibles dans Windows RE
+
+### Outil de configuration du système MSConfig.exe
+Outil de gestion du système permettant de gérer les services, applications, options de démarrage et Windows. Recense tous les outils d'administration de Windows 10
+
+### Outil de gestion des disques
+Interface graphique de gestion des disque-durs
+
+<div className="seperator" />
+
+## P
+
+### Panneau de configuration
+Offre des options de configuration avancées
+
+### Pare-Feu
+Fonctionnalité de sécurité permettant de choisir le trafic pouvant entrer ou sortir via ou par le réseau.
+
+### Pare-Feu : Profil
+Windows gère différents profils selon que l'ordinateur est connecté à un domaine, un réseau privé ou un réseau public. Une configuration propre à chaque profil est paramétrable
+
+### Pathping
+Commande équivalente à Tracert incluant la qualité de service.
+
+### Pilote
+Un pilote est un ensemble de fichiers qui servent d'interfaces entre le matériel et les logiciels qui y feront appels
+
+### Ping
+Commande lançant des requêtes ICMP vers un ordinateur ou un composant réseau. Equivalente à Test-Connection en PS
+
+### Pnputil.exe
+Commande de gestion des pilotes permettant notamment d'ajouter un pilote au magasin de pilote
+
+### Point de restauration
+Outil de protection du système. Le point de restauration enregistre automatiquement ou manuellement des fichiers et paramètres avant des mises à jour, des installations d'applications et diverses opérations de maintenance
+
+### PowerShell
+Interpréteur de commande de Windows, permet d'exécuter des scripts et des commandes d'administration avancées. PowerShell permet d'accéder :
+- Aux fichiers
+- Aux variables
+- Au registre
+- Aux certificats
+
+### PowerShell ISE
+PowerShell ISE est l'environnement d'écriture de script intégré à Windows 10
+<div className="seperator" />
+
+## R
+
+### Registre
+Le registre de Windows est un ensemble de fichiers contenant l'ensemble des paramètres de l'utilisateurs et de l'ordinateur. Le registre est séparé en 5 Ruches
+
+### Restaurer le pilote
+Fonction du gestionnaire de périphérique permettant de revenir à la version précédente du pilote après une mise à jour si un problème apparait
+
+### Ruches
+Sous ensemble du registre qui contient les clés utiles au fonctionnement de l'ordinateur ou à la configuration des paramètres utilisateurs
+<div className="seperator" />
+
+## S
+
+### Sauvegarde et restauration (Windows7)
+Outil de sauvegarde et de restauration intégré à Windows 10 permet de :
+- Créer des images systèmes
+- Sauvegarder et restaurer des fichiers et dossiers
+
+### Services
+Programmes propres au fonctionnement du système d'exploitation. Sans interface graphique, les services gèrent certaines fonctions essentielles du système d'exploitation ou d'applications
+
+### Signature des pilotes
+Windows 10 64bits nécessite des pilotes signés. La signature est une validation par une autorité de certification que le pilote fonctionne correctement
+
+### Sigverif.exe
+Outil graphique de vérification de la signature des pilotes
+
+### Storage Sense
+Outil de surveillance de l'espace disque. Storage Sense tri par rubrique les données stockées sur les disque-durs
+
+### Stratégies de groupe locale
+Les stratégies de groupe locale permettent de modifier les paramètres de l'ordinateur pour un utilisateur ou un groupe d'utilisateur.
+
+### Système de fichiers (File system)
+Format d'écriture des données sur le disque-dur
+
+### Système de fichiers FAT : FAT - File Allocation Table
+Système fichier créé en 1977, largement utilisé mais techniquement limité
+- Taille maximale de volume : 4Go
+- Taille maximale de fichier : 4Go
+- Nombre maximal de fichier : 65535
+
+### Système de fichiers FAT : FAT 32
+Evolution de FAT, largement diffusé.
+- Taille maximale de volume : 32Go
+- Taille maximale de fichier : 4Go
+- Nombre maximal de fichier : 4 Millions
+
+### Système de fichiers FAT : ExFAT - Extended FAT
+Evolution de FAT32, utilisé majoritairement pour les stockages amovibles.
+- Taille maximale de volume : 128 Pébi octets
+- Taille maximale de fichier : 16 exa octets
+- Nombre maximal de fichier : 2 Millions par dossier
+
+### Système de fichiers NTFS
+Système de fichiers journalisé, système standard de Windows 10
+- Prend en charge la compression et le chiffrement nativement
+- Prend en charge la gestion des autorisations de fichiers
+- Prend en charge la gestion d'audit et de quota
+
+### Système de fichiers NTFS : Autorisations
+Autorisations d'accès des fichiers accordées ou refusées à un utilisateur et/ou un groupe
+
+### Système de fichiers NTFS : Autorisations effectives
+Etat des autorisations sur un fichier, dossier ou volume accordées à un groupe ou un utilisateur
+
+### Système de fichiers NTFS : Autorisations explicites
+Autorisations données explicitement à un groupe ou un utilisateur sur un objet du système de fichiers NTFS. Opposé aux autorisations héritées
+
+### Système de fichiers NTFS : Autorisations héritées
+Autorisations sur un objet du système de fichiers NTFS émanant d'un objet parent. Opposé aux autorisations explicites
+
+### Système de fichiers NTFS : Compression
+Spécification NTFS, la compression est un attribut du fichier, La compression NTFS s'applique à des volumes, des dossiers ou des fichiers. Un élément compressé ne peut pas être chiffré.
+
+### Système de fichiers NTFS : EFS - Encrypted Files System
+Système de chiffrement de volumes, dossiers ou fichiers intégré à NTFS. EFS est un attribut de fichier comme la compression
+
+### Système de fichiers NTFS : Quota de disque
+Spécification NTFS. Chaque fichier dispose d'un créateur/propriétaire. NTFS analyse les fichiers créés et affiche la place utilisée par l'utilisateur. Une fois le quota épuisé, l'utilisateur est notifié ou bloqué.
+
+### Système de fichiers ReFS
+Système de fichiers journalisé destiné aux grands volumes de stockage
+- Prend en charge la gestion des autorisations de fichiers
+- Ne prend pas en charge la compression et le chiffrement
+- Ne prend pas en charge la gestion d'audit et de quota
+- ReFS dispose de fonctions d'analyse et de réparation du système de fichiers en continue
+<div className="seperator" />
+
+## T
+
+### TPM - Trusted Platform Module
+Le module TPM est un composant requis pour la vérification de l'intégrité du système avec BitLocker. Le module stocke des informations relatives à l'ordinateur, si ces données ne correspondent pas au démarrage, BitLocker verrouillera le disque jusqu'à la saisie de la clé de récupération.
+
+### Tracert
+Commande permettant de lister le chemin réseau vers une destination donnée
+<div className="seperator" />
+
+## U
+
+### UAC
+User Account Control ou Contrôle de compte utilisateur est un outil de sécurité demandant les droits utilisateurs ou une élévation de privilège pour valider une opération avant qu'elle ne s'exécute.
+
+### USMT
+User State Migration Tool : outil de migration des fichiers et paramètres utilisateurs utilisables en ligne de commande
+<div className="seperator" />
+
+## V
+
+### Volume agrégé par bande
+Volume dont les données sont réparties sur plusieurs disques physiques

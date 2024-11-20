@@ -1,0 +1,98 @@
+---
+type: page
+title: Les permissions NTFS
+tag: windows
+author: Ardox
+---
+import Diagram from "../../comp/diagram.jsx"
+
+Le NTFS (New Technology File System) est un système de fichiers propriétaire à Microsoft. Il a été créé en 1993
+à l’occasion de la sortie de Windows NT 3.1. Il est utilisé dans tous les Windows clients de la branche NT (NT
+3.x, NT 4.x, 2000, XP, Vista, 7, 8.x, 10, 11) et par toutes les versions de serveurs.
+<br />
+Il succède au système de fichiers FAT (File Allocation Table) qui avait des limitations en termes de débit, de
+capacité de stockage et de sécurité et confidentialité des données. Le NTFS a de plus amélioré les
+performances.
+<br />
+Les autorisations NTFS se révèlent nécessaires lorsque, par exemple, un ordinateur est partagé entre plusieurs
+utilisateurs.
+<br />
+<div className="seperator" />
+**Prérequis**:
+- Plusieurs utilisateurs du poste doivent être créés
+- Chaque utilisateur doit avoir son mot de passe d’ouverture de session
+- Les utilisateurs doivent tous faire partie du groupe « Utilisateurs »
+- Les utilisateurs doivent être affectés à des groupes (ex : Service Direction, Service Commercial…)
+- Bien entendu, l’administrateur devra faire partie du groupe « Administrateurs ».
+- Disposer d'un dossier qui devra être accessible (ou non). Pour notre exemple, il s'appellera
+« Confidentiel ».
+
+**Autorisations**:
+Quatre personnes seront chacune affectées à un service avec des droits spécifiques pour accéder au dossier
+« Confidentiel ».
+| Utilisateur         | Membre de   | Acces        |
+|---------------------|-------------|--------------|
+| Directeur           | Direction   | modification |
+| Comptable           | Compta      | lecture      |
+| Stagiaire compta    | Compta      | aucun        |
+| Operateur de saisie | Utilisateur | aucun        |
+
+<div className="seperator" />
+## Création des éléments nécessaires
+- Pour créer un groupe : Gestion de l’ordinateur > Outils système > Utilisateurs et groupes locaux > Groupes.
+- Pour créer un utilisateur : Gestion de l’ordinateur > Outils système > Utilisateurs et groupes locaux >
+Utilisateurs.
+- Pour affecter un utilisateur à un groupe, le choisir dans l’onglet « Membre de » puis cliquer sur "vérifier les
+noms". L'utilisateur ajouté apparaitra sous la forme "NomDePC\NomD'Utilisateur".
+- Créer un dossier sur C: (répertoire racine) et le nommer Confidentiel
+
+<div className="seperator" />
+## Notions fondamentales
+La liste des utilisateurs et des groupes s'appelle une ACL (Access Control List)
+- Utilisateurs
+- Administrateurs
+- Système
+- Groupe Administrateur…
+La liste des permissions s'appelle une ACE (Access Control Entry)
+- Écriture : Créer des fichiers ou des dossiers, écrire dans les fichiers.
+- Lecture : Lire, parcourir les dossiers et sous-dossiers, voir les propriétaires.
+- Lecture et exécution : Idem que pour lecture, avec la possibilité d'exécuter des programmes.
+- Modification : Toutes les autorisations précédentes, en y ajoutant la modification (sauf celle des
+autorisations) et la suppression (sauf celle d'une arborescence).
+- Contrôle Total : Toutes les autorisations.
+Le refus, dans une ACE, est prioritaire face à l'autorisation.
+
+<div className="seperator" />
+## Application des paramètres de sécurité
+- Après avoir créé le dossier Confidentiel sur le disque, cliquer droit > Propriétés > Sécurité.
+- Parmi la liste des ACL, supprimer tous ceux qui ne doivent pas avoir accès à ce dossier (ex : Utilisateurs
+authentifiés qui ont déjà accès à tout sauf à Contrôle Total).
+- Le sélectionner puis cliquer sur Modifier. Un message apparaitra indiquant que l'utilisateur ne peut pas être
+supprimé à cause des droits hérités.
+- Pour casser cet héritage de droits : Onglet Sécurité > Avancé > Désactiver l'héritage.
+
+<div class="p-4 font-mono border-l-2 border-white bg-mbg my-6">
+> Convertir les autorisations héritées en autorisations
+> explicites sur cet objet : casse l'héritage sur l'objet et
+> permet la suppression d'utilisateurs.
+
+</div>
+<div class="p-4 font-mono border-l-2 border-white bg-mbg my-6">
+> Supprimer toutes les autorisations héritées de cet objet
+> : tous les groupes et utilisateurs sont supprimés des
+> héritages, il faudra les réappliquer en repartant de zéro.
+
+</div>
+
+- Le groupe "Utilisateurs authentifiés" peut maintenant être supprimé. Il doit en être de même pour les
+utilisateurs "Stagiaire" et "Opérateur de saisie" qui ne doivent pas avoir le droit d'accéder au dossier
+"Confidentiel". Les utilisateurs et groupes Administrateur et Système doivent rester en Contrôle Total
+
+- Ensuite cliquer sur Modifier > Ajouter > Avancé > Rechercher.
+- Ajouter les groupes Direction et Comptabilité.
+- Appliquer les autorisations du tableau des ACL.
+Le stagiaire faisant partie du groupe Comptabilité aura accès au dossier Confidentiel. Il faut donc ajouter le
+stagiaire individuellement à la liste, et lui refuser tout accès. Le refus d'un accès prévaut face à l'autorisation
+d'accès.
+Les autorisations NTFS sont maintenant effectives. Tester avec le compte Stagiaire Comptable ou Opérateur
+de saisie en essayant d'ouvrir le dossier Confidentiel.
