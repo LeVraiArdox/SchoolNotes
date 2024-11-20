@@ -158,6 +158,13 @@ th, td {
     @apply my-4 rounded-xl w-full invert-0 dark:invert transition;
 }
 
+.searchbar {
+    @apply bg-neutral-100 dark:bg-background-2 rounded-md p-2 flex items-center gap-2;
+}
+.searchbar input {
+    @apply bg-transparent border-none focus:outline-none;
+}
+
 :root {
     --shiki-color-text: #171717;
     --shiki-color-background: transparent;
