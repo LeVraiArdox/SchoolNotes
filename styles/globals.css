@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Outfit:wght@100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,24 +35,23 @@
     @apply bg-violet-300 w-full;
 }
 
-.markdown-content .difficulty-amateur {
+.difficulty-amateur {
     @apply bg-emerald-300;
 }
 
-.markdown-content .difficulty-intermediate {
+.difficulty-intermediate {
     @apply bg-amber-300;
 }
 
-
-.markdown-content .difficulty-novice {
+.difficulty-novice {
     @apply bg-primary;
 }
 
-.markdown-content .difficulty-advance {
+.difficulty-advance {
     @apply bg-rose-400;
 }
 
-.markdown-content .difficulty-expert {
+.difficulty-expert {
     @apply bg-violet-400;
 }
 
@@ -159,7 +158,7 @@ th, td {
 }
 
 .searchbar {
-    @apply bg-neutral-100 dark:bg-background-2 rounded-md p-2 flex items-center gap-2;
+    @apply bg-neutral-100 dark:bg-background-2 rounded-md p-2 flex gap-2 items-baseline;
 }
 .searchbar input {
     @apply bg-transparent border-none focus:outline-none;
