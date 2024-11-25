@@ -51,6 +51,7 @@ const categories = {
         { text: "Les fonctions racine carrée", link: "/maths/fonctionV2", level: 1 },
         { text: "Les fonctions cubes", link: "/maths/fonction3", level: 1 },
         { text: "Les fonctions inverses", link: "/maths/fonctioninv", level: 1 },
+        { text: "Les Dérivations", link: "/maths/derivation", level: 2},
       ],
       'Git': [
         { text: "Les bases", link: "/git/bases", level: 1 },
