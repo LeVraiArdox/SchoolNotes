@@ -52,6 +52,8 @@ const categories = {
         { text: "Les fonctions cubes", link: "/maths/fonction3", level: 1 },
         { text: "Les fonctions inverses", link: "/maths/fonctioninv", level: 1 },
         { text: "Les Dérivations", link: "/maths/derivation", level: 2},
+        { text: "Fonction exponentielle", link: "/maths/exp", level: 3 },
+        { text: "Le Logarithme Népérien", link: "/maths/ln", level: 3 },
       ],
       'Git': [
         { text: "Les bases", link: "/git/bases", level: 1 },
