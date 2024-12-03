@@ -30,6 +30,13 @@ const categories = {
         { text: "TCP", link: "/reseaux/TCP", level: 2 },
         { text: "UDP", link: "/reseaux/UDP", level: 2 },
         { text: "QUIC", link: "/reseaux/QUIC", level: 2 },
+        { text: "Le protocole DHCP", link: "/reseaux/dhcp", level: 2 },
+        { text: "Le protocole DNS", link: "/reseaux/dns", level: 2 },
+        { text: "Les protocoles HTTP et HTTPS", link: "/reseaux/http", level: 2 },
+        { text: "FTP", link: "/reseaux/ftp", level: 1 },
+        { text: "SMTP, POP et IMAP", link: "/reseaux/smtp", level: 1 },
+
+
       ],
       'Windows': [
         { text: "Les bases des OS", link: "/windows/bases", level: 1 },
