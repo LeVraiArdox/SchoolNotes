@@ -70,11 +70,12 @@ const categories = {
       ],
       'Python': [
         { text: "Les bases", link: "/python/bases", level: 1 },
-        { text: "Print", link: "/python/print", level: 1 },
+        { text: "Print", link: "/python/print", level: 5 },
         { text: "Les variables", link: "/python/variables", level: 1 },
         { text: "Les conditions", link: "/python/condi", level: 1 },
         { text: "Les commentaires", link: "/python/comments", level: 1 },
         { text: "Les opérations de base", link: "/python/maths", level: 1 },
+        { text: "Les listes", link: "/python/list", level: 1 },
       ],
   };
   
