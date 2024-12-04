@@ -116,7 +116,7 @@ const SearchBar = () => {
       color = "difficulty-expert";
     }
     return (
-        <span className={`difficulty ${color}`}>{t}</span>
+      <span className={`difficulty ${color}`}>{t}</span>
     );
 }
 
