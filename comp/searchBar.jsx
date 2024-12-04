@@ -68,6 +68,14 @@ const categories = {
       'Connaissance de l\'entreprise': [
         { text: "Définition de l'entreprise", link: "/entreprise/definition", level: 1 },
       ],
+      'Python': [
+        { text: "Les bases", link: "/python/bases", level: 1 },
+        { text: "Print", link: "/python/print", level: 1 },
+        { text: "Les variables", link: "/python/variables", level: 1 },
+        { text: "Les conditions", link: "/python/condi", level: 1 },
+        { text: "Les commentaires", link: "/python/comments", level: 1 },
+        { text: "Les opérations de base", link: "/python/maths", level: 1 },
+      ],
   };
   
 
