@@ -76,6 +76,7 @@ const categories = {
         { text: "Les commentaires", link: "/python/comments", level: 1 },
         { text: "Les opérations de base", link: "/python/maths", level: 1 },
         { text: "Les listes", link: "/python/list", level: 1 },
+        { text: "Les fonctions", link: "/python/fonctions", level: 1 },
       ],
   };
   
